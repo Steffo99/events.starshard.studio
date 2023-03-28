@@ -4,7 +4,8 @@
 	"author": "Stefano Pigozzi <me@steffo.eu>",
 	"private": true,
 	"scripts": {
-		"dev": "eleventy --serve --incremental --input=. --output=./docs"
+		"dev": "eleventy --serve --incremental --input=. --output=./docs",
+		"build": "eleventy --input=. --output=./docs"
 	},
 	"dependencies": {
 		"@steffo/bluelib": "^7.1.0"
