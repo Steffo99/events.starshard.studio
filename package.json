@@ -1,0 +1,15 @@
+{
+	"name": "@starshardstudio/events",
+	"version": "0.1.0",
+	"author": "Stefano Pigozzi <me@steffo.eu>",
+	"private": true,
+	"scripts": {
+		"dev": "eleventy --serve --incremental --input=. --output=./docs"
+	},
+	"dependencies": {
+		"@steffo/bluelib": "^7.1.0"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.0"
+	}
+}

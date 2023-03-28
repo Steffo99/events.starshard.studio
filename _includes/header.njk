@@ -1,0 +1,13 @@
+<header>
+	<hgroup>
+		<div>
+			{% if icon %}
+				<img alt="" src="{{ icon }}">
+			{% endif %}
+			{{ pretitle | safe }}
+		</div>
+		<h1>
+			{{ title }}
+		</h1>
+	</hgroup>
+</header>
