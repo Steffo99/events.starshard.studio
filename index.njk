@@ -1,16 +1,68 @@
 ---
 layout: center
-pretitle: "Wow, è proprio la homepage degli eventi di"
-title: "Star Shard Studio"
+eleventyImport:
+    collections:
+        - events
+        - people
+
+lang: "en"
+icon: "calendar-day"
+pretitle: "You've reached the homepage of"
+title: "Star Shard Events"
 ---
 
-<div class="chapter-1">
-	<div class="panel box p476">
+<div class="chapter-2">
+	<div class="panel box width-max1">
 		<h3>
-			In costruzione
+			Where am I?
 		</h3>
 		<p>
-			La pagina principale non esiste ancora. <em class="fade">Ironico, no?</em>
+			This is the website where events organized by <a href="https://www.starshard.studio/">Star Shard Studio</a> are announced, listed, and archived!
 		</p>
+	</div>
+</div>
+<div class="chapter-2">
+	<div class="panel box width-max1">
+		<h3>
+			Events
+		</h3>
+		<p>
+			This is a list of all events from the latest to the oldest.<br>
+			Feel free to browse and maybe partecipate in one too!
+		</p>
+		<hr/>
+		<ol class="list-events" reversed>
+			{% for event in collections.events %}
+				<li class="event">
+					<img alt="" src="https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/{{ event.data.icon }}.png" class="icon">
+					<h4 class="event-title">
+						<a href="{{ event.url }}">
+							{{ event.data.title }}
+						</a>
+					</h4>
+					<div class="event-extra">
+						<time datetime="{{ event.data.startDate }}"></time> · <span>{{ event.data.description }}</span>
+					</div>
+				</li>
+			{% endfor %}
+		</ol>
+	</div>
+	<div class="panel box width-max1">
+		<h3>
+			Players
+		</h3>
+		<p>
+			This is a list of everyone who partecipated in at least an event and agreed to be listed here!
+		</p>
+		<hr/>
+		<ul>
+			{% for player in collections.players %}
+				<li>
+					<a href="{{ event.url }}">
+						{{ event.data.title }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
 	</div>
 </div>

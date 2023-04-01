@@ -4,5 +4,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist/glass.root.css");
 	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist/colors-purplestar.root.css");
 	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist/fonts-fira-ghpages.root.css");
-	eleventyConfig.addPassthroughCopy("./bluelib-custom.root.css");
+	eleventyConfig.addPassthroughCopy("./index.css");
+	eleventyConfig.addPassthroughCopy("./index.js");
 };

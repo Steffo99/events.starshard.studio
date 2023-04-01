@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="it">
+<html {% if lang %}lang="{{ lang }}"{% endif %}>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="description" content="{{ description }}">
+		<title>{{ title }}</title>
 		<link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/base.root.css" type="text/css">
 		<link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/classic.root.css" type="text/css">
 		<link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/glass.root.css" type="text/css">
 		<link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/colors-purplestar.root.css" type="text/css">
 		<link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/fonts-fira-ghpages.root.css" type="text/css">
-		<link rel="stylesheet" href="/bluelib-custom.root.css" type="text/css">
-		<title>{{ title }}</title>
-		<meta name="description" content="{{ description }}">
+		<link rel="stylesheet" href="/index.css" type="text/css">
+		<script src="/index.js">
 	</head>
 	<body>
-		<img class="page-background" alt="" src="https://bluelib.steffo.eu/examples/kazuend-2KXEb_8G5vo-unsplash-edited.jpg">
+		<img class="layout-background" alt="" src="https://bluelib.steffo.eu/examples/kazuend-2KXEb_8G5vo-unsplash-edited.jpg">
 		{{ content | safe }}
 	</body>
 </html>

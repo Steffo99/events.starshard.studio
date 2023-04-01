@@ -1,0 +1,95 @@
+.layout-background {
+    width: 100vw;
+    height: 120vh;
+
+    position: fixed;
+    z-index: -1;
+
+    object-fit: cover;
+    object-position: center;
+
+    user-select: none;
+}
+
+.layout-center {
+	min-height: 100vh;
+	padding: 0 8px;
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+}
+
+header {
+    text-align: center;
+}
+
+.icon {
+	display: inline-block;
+	height: 1.2em;
+	vertical-align: sub;
+	border-radius: 100%;
+}
+
+.width-max1 {
+	flex-basis: 476px;
+	flex-grow: 0;
+}
+
+@media screen and (max-width: 492px) {
+	.width-max1 {
+		flex-basis: 100%;
+		flex-grow: 0;
+	}
+}
+
+.font-smaller {
+	font-size: smaller;
+}
+
+.font-larger {
+    font-size: larger;
+}
+
+time {
+	text-decoration: underline 1px dotted currentColor;
+	cursor: help;
+}
+
+.list-events {
+	margin-left: 0 !important;
+}
+
+.list-events > .event {
+	display: grid;
+	grid-template-areas:
+		"icon title"
+		"icon extra"
+	;
+	grid-template-columns: 48px 1fr;
+	grid-template-rows: auto 1fr;
+	grid-column-gap: 8px;
+}
+
+.list-events > .event > .icon {
+	grid-area: icon;
+	height: auto;
+
+	justify-self: end;
+}
+
+.list-events > .event > .event-title {
+	grid-area: title;
+	font-size: large;
+
+	justify-self: start;
+}
+
+.list-events > .event > .event-extra {
+	grid-area: extra;
+	font-size: x-small;
+
+	justify-self: start;
+}
