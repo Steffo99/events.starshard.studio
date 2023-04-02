@@ -1,13 +1,17 @@
 <header>
 	<hgroup>
-		<div>
-			{{ pretitle | safe }}
-		</div>
-		<h1>
-			{% if icon %}
-				<img alt="" src="https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/{{ icon }}.png" class="icon">
-			{% endif %}
-			{{ title }}
-		</h1>
+		{% if pretitle %}
+			<div>
+				{{ pretitle | safe }}
+			</div>
+		{% endif %}
+		{% if title %}
+			<h1>
+				{% if icon %}
+					<img alt="" src="https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/{{ icon }}.png" class="icon">
+				{% endif %}
+				{{ title }}
+			</h1>
+		{% endif %}
 	</hgroup>
 </header>

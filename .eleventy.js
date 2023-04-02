@@ -6,4 +6,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist/fonts-fira-ghpages.root.css");
 	eleventyConfig.addPassthroughCopy("./index.css");
 	eleventyConfig.addPassthroughCopy("./index.js");
+
+	eleventyConfig.addFilter("flagEmoji", function(value) {
+		return {
+			"it": "🇮🇹",
+			"en": "🇬🇧",
+		}[value]
+	})
 };

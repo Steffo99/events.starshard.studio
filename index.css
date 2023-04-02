@@ -31,6 +31,7 @@ header {
 	height: 1.2em;
 	vertical-align: sub;
 	border-radius: 100%;
+	box-shadow: var(--b-outer-shadow);
 }
 
 .width-max1 {
@@ -58,8 +59,9 @@ time {
 	cursor: help;
 }
 
-.list-events {
+.list-events, .list-players {
 	margin-left: 0 !important;
+	list-style-type: none;
 }
 
 .list-events > .event {
@@ -89,7 +91,7 @@ time {
 
 .list-events > .event > .event-extra {
 	grid-area: extra;
-	font-size: x-small;
+	font-size: small;
 
 	justify-self: start;
 }

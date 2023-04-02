@@ -3,7 +3,7 @@ layout: center
 eleventyImport:
     collections:
         - events
-        - people
+        - players
 
 lang: "en"
 icon: "calendar-day"
@@ -27,8 +27,7 @@ title: "Star Shard Events"
 			Events
 		</h3>
 		<p>
-			This is a list of all events from the latest to the oldest.<br>
-			Feel free to browse and maybe partecipate in one too!
+			All events, from the newest to the oldest.
 		</p>
 		<hr/>
 		<ol class="list-events" reversed>
@@ -41,7 +40,7 @@ title: "Star Shard Events"
 						</a>
 					</h4>
 					<div class="event-extra">
-						<time datetime="{{ event.data.startDate }}"></time> · <span>{{ event.data.description }}</span>
+						<time datetime="{{ event.data.startDate }}" data-render></time> · <span>{{ event.data.lang | flagEmoji }} </span> · <span>{{ event.data.description }}</span>
 					</div>
 				</li>
 			{% endfor %}
@@ -52,14 +51,15 @@ title: "Star Shard Events"
 			Players
 		</h3>
 		<p>
-			This is a list of everyone who partecipated in at least an event and agreed to be listed here!
+			Thanks to everyone who partecipates in our events!
 		</p>
 		<hr/>
-		<ul>
+		<ul class="list-players">
 			{% for player in collections.players %}
-				<li>
-					<a href="{{ event.url }}">
-						{{ event.data.title }}
+				<li class="player">
+					<a href="{{ player.url }}">
+						<img alt="" src="https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/{{ player.data.icon }}.png" class="icon">
+						<span class="player-name">{{ player.data.title }}</span>
 					</a>
 				</li>
 			{% endfor %}
