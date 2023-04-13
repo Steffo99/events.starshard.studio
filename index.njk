@@ -31,7 +31,7 @@ title: "Star Shard Events"
 		</p>
 		<hr/>
 		<ol class="list-events" reversed>
-			{% for event in collections.events %}
+			{% for event in collections.events | sort(reverse=true, attribute="data.startDate") %}
 				<li class="event">
 					<img alt="" src="https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/{{ event.data.icon }}.png" class="icon">
 					<h4 class="event-title">
