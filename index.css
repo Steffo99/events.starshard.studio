@@ -59,12 +59,22 @@ time {
 	cursor: help;
 }
 
+.list-with-some-space li {
+	margin-bottom: 4px;
+}
+
+.list-with-some-space li:last-child {
+	margin-bottom: 0;
+}
+
 .list-events, .list-players {
 	margin-left: 0 !important;
 	list-style-type: none;
 }
 
 .list-events > .event {
+	margin: 8px 0;
+
 	display: grid;
 	grid-template-areas:
 		"icon title"
@@ -94,4 +104,34 @@ time {
 	font-size: small;
 
 	justify-self: start;
+}
+
+.place-first {
+	font-size: xx-large;
+	font-weight: 700;
+	color: hsl(36 100% 60%);
+}
+
+.place-first::marker {
+	color: hsl(36 100% 60% / 40%);
+}
+
+.place-second {
+	font-size: x-large;
+	font-weight: 600;
+	color: hsl(205 20% 83%);
+}
+
+.place-second::marker {
+	color: hsl(205 20% 83% / 40%);
+}
+
+.place-third {
+	font-size: large;
+	font-weight: 500;
+	color: hsl(24 100% 62%);
+}
+
+.place-third::marker {
+	color: hsl(24 100% 62% / 40%)
 }

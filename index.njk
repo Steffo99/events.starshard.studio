@@ -40,7 +40,7 @@ title: "Star Shard Events"
 						</a>
 					</h4>
 					<div class="event-extra">
-						<time datetime="{{ event.data.startDate }}" data-render></time> · <span>{{ event.data.lang | flagEmoji }} </span> · <span>{{ event.data.description }}</span>
+						<time datetime="{{ event.data.startDate }}" data-render="relative-short">{{ event.data.startDate }}</time> · <span>{{ event.data.lang | flagEmoji }} </span> · <span>{{ event.data.description }}</span>
 					</div>
 				</li>
 			{% endfor %}
