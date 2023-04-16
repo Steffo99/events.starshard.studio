@@ -1,64 +1,6 @@
 <!DOCTYPE html>
-<html {% if lang %}lang="{{ lang }}"{% endif %}>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<meta name="description" content="{{ description }}" />
-		<title>{{ title }}</title>
-		<link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/base.root.css" type="text/css">
-		<link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/classic.root.css" type="text/css">
-		<link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/glass.root.css" type="text/css">
-		<link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/layouts-center.root.css" type="text/css">
-		<link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/colors-purplestar.root.css" type="text/css">
-		<link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/fonts-fira-ghpages.root.css" type="text/css">
-		<link rel="stylesheet" href="/index.css" type="text/css">
-		<script src="/index.js"></script>
-	</head>
-	<body class="layout-center">
-
-		<img
-			alt=""
-			srcset="/media/kazuend-2KXEb_8G5vo-unsplash-edited-480.jpg 1219w, /media/kazuend-2KXEb_8G5vo-unsplash-edited-720.jpg 1829w, /media/kazuend-2KXEb_8G5vo-unsplash-edited-1080.jpg 2744w"
-			sizes="(max-width: 1219px and max-height: 480px) 1219px, (max-width: 1829px and max-height: 720px) 1829px, (max-width: 2744px and max-height: 1080px) 2744px"
-			src="/media/kazuend-2KXEb_8G5vo-unsplash-edited-full.jpg"
-			class="layout-center-background"
-		>
-
-		<header>
-			<hgroup>
-				{% if pretitle %}
-					<div>
-						{{ pretitle | safe }}
-					</div>
-				{% endif %}
-				{% if title %}
-					<h1>
-						{% if icon %}
-							<img alt="" src="https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/{{ icon }}.png" class="icon">
-						{% endif %}
-						{{ title }}
-					</h1>
-				{% endif %}
-			</hgroup>
-		</header>
-
-		<main>
-			{{ content | safe }}
-		</main>
-
-		<footer>
-			<span id="copyright">
-				© Stefano Pigozzi
-			</span>
-			&nbsp;|&nbsp;
-			<span id="icons">
-				Icons <a href="https://fontawesome.com/license/free">CC-BY-4.0</a> <a href="https://fontawesome.com/">Font Awesome</a>
-			</span>
-			&nbsp;|&nbsp;
-			<a href="https://github.com/starshardstudio/events.starshard.studio" id="source">
-				Source code
-			</a>
-		</footer>
-
-	</body>
+<!-- Thank you for inspecting the page! :) -->
+<html lang="{{ lang }}">
+    {% include "base-head.njk" %}
+    {% include "base-body.njk" %}
 </html>

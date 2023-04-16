@@ -1,68 +1,33 @@
 ---
-layout: center
-eleventyImport:
-    collections:
-        - events
-        - players
+layout: base
+lang: en
 
-lang: "en"
-icon: "calendar-day"
-pretitle: "You've reached the homepage of"
-title: "Star Shard Events"
+icon: "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/language.png"
+
+s:
+    en:
+        title:
+            pre: "Did you know that"
+            main: "Star Shard Events"
+            post: "is available in multiple languages?"
 ---
 
-<div class="chapter-2">
-	<div class="panel box width-max1">
-		<h3>
-			Where am I?
-		</h3>
-		<p>
-			This is the website where events organized by <a href="https://www.starshard.studio/">Star Shard Studio</a> are announced, listed, and archived!
-		</p>
-	</div>
-</div>
-<div class="chapter-2">
-	<div class="panel box width-max1">
-		<h3>
-			Events
-		</h3>
-		<p>
-			All events, from the newest to the oldest.
-		</p>
-		<hr/>
-		<ol class="list-events" reversed>
-			{% for event in collections.events | sort(reverse=true, attribute="data.startDate") %}
-				<li class="event">
-					<img alt="" src="https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/{{ event.data.icon }}.png" class="icon">
-					<h4 class="event-title">
-						<a href="{{ event.url }}">
-							{{ event.data.title }}
-						</a>
-					</h4>
-					<div class="event-extra">
-						<time datetime="{{ event.data.startDate }}" data-render="relative-short">{{ event.data.startDate }}</time> · <span>{{ event.data.lang | flagEmoji }} </span> · <span>{{ event.data.description }}</span>
-					</div>
-				</li>
-			{% endfor %}
-		</ol>
-	</div>
-	<div class="panel box width-max1 todo">
-		<h3>
-			Players
-		</h3>
-		<p>
-			Thanks to everyone who partecipates in our events!
-		</p>
-		<hr/>
-		<ul class="list-players">
-			{% for player in collections.players %}
-				<li class="player">
-					<a href="{{ player.url }}">
-						<img alt="" src="https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/{{ player.data.icon }}.png" class="icon">
-						<span class="player-name">{{ player.data.title }}</span>
-					</a>
-				</li>
-			{% endfor %}
-		</ul>
-	</div>
+<div class="chapter-1">
+    <div class="panel box width-max1">
+        <h3>
+            Select your language
+        </h3>
+        <div class="chapter-2">
+            <a href="/en/">
+                <div class="panel">
+                    {{ "GB" | emojiFlag }} English
+                </div>
+            </a>
+            <a href="/it/">
+                <div class="panel">
+                    {{ "IT" | emojiFlag }} Italiano
+                </div>
+            </a>
+        </div>
+    </div>
 </div>

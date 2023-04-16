@@ -1,0 +1,56 @@
+<footer>
+    <span id="copyright">
+        © <a href="https://www.steffo.eu">Stefano Pigozzi</a>
+    </span>
+    &nbsp;|&nbsp;
+    <span id="credit-icons">
+        <a href="https://github.com/starshardstudio/emblems">
+            {%- if lang === "it" -%}
+                Icone
+            {%- elif lang === "en" -%}
+                Icons
+            {%- endif -%}
+        </a>:
+        <a href="https://fontawesome.com/">Font Awesome</a>
+        (<a href="https://fontawesome.com/license/free">CC-BY-4.0</a>)
+    </span>
+    &nbsp;|&nbsp;
+    <span id="credit-background">
+        <a href="https://unsplash.com/photos/2KXEb_8G5vo">
+            {%- if lang === "it" -%}
+                Sfondo
+            {%- elif lang === "en" -%}
+                Background
+            {%- endif -%}
+        </a>:
+        <a href="https://unsplash.com/@kazuend">Kazuend</a>
+        (<a href="https://unsplash.com/license">Unsplash License</a>),
+        {% if lang === "it" -%}
+            modificato
+        {% elif lang === "en" -%}
+            edited
+        {% endif -%}
+    </span>
+    &nbsp;|&nbsp;
+    <span id="credit-source">
+        <a href="https://github.com/starshardstudio/events.starshard.studio">
+            {%- if lang === "it" -%}
+                Sito web statico
+            {%- elif lang === "en" -%}
+                Static website
+            {%- endif -%}
+        </a>
+        {% if lang === "it" %}
+            realizzato con
+        {% elif lang === "en" %}
+            built with
+        {% endif %}
+        <a href="https://bluelib.steffo.eu/examples/index.html">Bluelib</a>
+        {% if lang === "it" %}
+            ed
+        {% elif lang === "en" %}
+            and
+        {% endif %}
+        <a href="https://ww\w.11ty.dev/"> Eleventy</a>
+    </span>
+</footer>

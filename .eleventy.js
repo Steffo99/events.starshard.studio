@@ -1,21 +1,15 @@
 module.exports = function(eleventyConfig) {
-	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist/base.root.css");
-	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist/classic.root.css");
-	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist/glass.root.css");
-	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist/layouts-center.root.css");
-	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist/colors-purplestar.root.css");
-	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist/fonts-fira-ghpages.root.css");
-	eleventyConfig.addPassthroughCopy("./index.css");
-	eleventyConfig.addPassthroughCopy("./index.js");
-	eleventyConfig.addPassthroughCopy("./media/kazuend-2KXEb_8G5vo-unsplash-edited-full.jpg");
-	eleventyConfig.addPassthroughCopy("./media/kazuend-2KXEb_8G5vo-unsplash-edited-1080.jpg");
-	eleventyConfig.addPassthroughCopy("./media/kazuend-2KXEb_8G5vo-unsplash-edited-720.jpg");
-	eleventyConfig.addPassthroughCopy("./media/kazuend-2KXEb_8G5vo-unsplash-edited-480.jpg");
+	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist");
+	eleventyConfig.addPassthroughCopy("./_tweaks");
+	eleventyConfig.addPassthroughCopy("./_media");
 
-	eleventyConfig.addFilter("flagEmoji", function(value) {
-		return {
-			"it": "🇮🇹",
-			"en": "🇬🇧",
-		}[value]
+    // https://dev.to/jorik/country-code-to-flag-emoji-a21
+	eleventyConfig.addFilter("emojiFlag", function(value) {
+        return String.fromCodePoint(...
+            value
+                .toUpperCase()
+                .split('')
+                .map(char => 0x1F1A5 + char.charCodeAt())
+        )
 	})
 };

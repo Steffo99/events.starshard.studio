@@ -1,0 +1,159 @@
+---
+layout: base
+
+s:
+    en:
+        title:
+            pre: |-
+                <a href="/en/">Star Shard Events</a> presents
+        core:
+            title: "Things to know"
+            about:
+                title: "What is this about?"
+                cta: "Play now: "
+            join:
+                title: "When does the event start?"
+                content1: "The event will begin:"
+                content2: "Sign up before then!"
+                cta: "Sign up now: "
+        screenshots:
+            title: "Screenshots"
+        extra:
+            title: "Additional information"
+            placements:
+                title: "Placements"
+                rank: "Rank"
+                name: "Name"
+                score: "Score"
+                reward: "Reward"
+    it:
+        title:
+            pre: |-
+                <a href="/it/">Star Shard Events</a> presenta
+        core:
+            title: "Cose da sapere"
+            about:
+                title: "Di cosa si tratta?"
+                cta: "Gioca ora: "
+            join:
+                title: "Quando inizia l'evento?"
+                content1: "L'evento avrà inizio:"
+                content2: "Iscriviti prima di allora!"
+                cta: "Iscriviti ora: "
+        screenshots:
+            title: "Screenshot"
+        extra:
+            title: "Informazioni aggiuntive"
+            placements:
+                title: "Piazzamenti"
+                rank: "Posizione"
+                name: "Nome"
+                score: "Punteggio"
+                reward: "Ricompensa"
+---
+
+<div id="cta" class="chapter-2">
+    <h2 id="core-title">
+        {{ s[lang].core.title | safe }}
+    </h2>
+    <section id="core-about" class="panel box width-max1">
+        <h3>
+            {{ s[lang].core.about.title | safe }}
+        </h3>
+        {{ s[lang].core.about.description | safe }}
+        {% if s.games %}
+            <hr class="float-bottom"/>
+            <p id="core-about-cta" class="cta">
+                <span>
+                    {{ s[lang].core.about.cta }}
+                </span>
+                {% for platform_name, platform_url in s.games %}
+                    <a href="{{ platform_url }}"><button>{{ platform_name }}</button></a>
+                {% endfor %}
+            </p>
+        {% endif %}
+    </section>
+    <section id="core-join" class="panel box width-max1">
+        <h3 id="core-join-title">
+            {{ s[lang].core.join.title | safe }}
+        </h3>
+        <p>
+            {{ s[lang].core.join.content1 | safe }}
+        </p>
+        <div id="core-join-date" class="panel date">
+            <time id="core-join-date-relative" datetime="{{ s.date }}" data-render="relative-long">{{ s.date }}</time>
+            <time id="core-join-date-absolute" datetime="{{ s.date }}" data-render="datetime">{{ s.date }}</time>
+        </div>
+        <p>
+            {{ s[lang].core.join.content2 | safe }}
+        </p>
+        {% if s.join %}
+            <hr class="float-bottom"/>
+            <p id="core-join-cta" class="cta">
+                <span>
+                    {{ s[lang].core.join.cta }}
+                </span>
+                {% for service_name, service_url in s.join %}
+                    <a href="{{ service_url }}"><button>{{ service_name }}</button></a>
+                {% endfor %}
+            </p>
+        {% endif %}
+    </section>
+</div>
+
+<div id="screenshots" class="chapter-3">
+    <h2>
+        {{ s[lang].screenshots.title }}
+    </h2>
+    {% if s.screenshots %}
+            {% for screenshot in s.screenshots %}
+                <img class="panel box width-max1" alt="{{ screenshot.alt[lang] }}" title="{{ screenshot.alt[lang] }}" src="{{ screenshot.src }}">
+            {% endfor %}
+    {% endif %}
+</div>
+
+<div id="extra" class="chapter-2">
+    <h2 id="extra-title">
+        {{ s[lang].extra.title }}
+    </h2>
+    {% if s.placements %}
+        <table id="extra-placements" class="panel box width-max1">
+            <caption class="table-caption-top">
+                <h3>
+                    {{ s[lang].extra.placements.title }}
+                </h3>
+            </caption>
+            <thead>
+                <tr>
+                    <th>{{ s[lang].extra.placements.rank }}</th>
+                    <th>{{ s[lang].extra.placements.name }}</th>
+                    <th>{{ s[lang].extra.placements.score }}</th>
+                    <th>{{ s[lang].extra.placements.reward }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for placement in s.placements %}
+                    <tr class="rank-{{ placement.rank }}">
+                        <td class="placement-rank">
+                            {{ placement.rank }}
+                        </td>
+                        <td class="placement-name">
+                            {{ placement.name }}
+                        </td>
+                        <td class="placement-score">
+                            {{ placement.score }}
+                        </td>
+                        <td class="placement-reward" title="{{ s[lang].event.valueHint }}">
+                            <span class="placement-reward-symbol">
+                                ¤
+                            </span>
+                            <span class="placement-reward-number">
+                                {{ placement.reward }}
+                            </span>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>

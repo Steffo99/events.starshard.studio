@@ -1,0 +1,140 @@
+[
+    {
+        "id": "momento-tetro",
+        "icon": "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/cubes-stacked.png",
+        "date": "2023-04-20T21:00+0200",
+        "finished": false,
+        "placements": [
+            {
+                "rank": 1,
+                "reward": 100
+            },
+            {
+                "rank": 2,
+                "reward": 80
+            },
+            {
+                "rank": 3,
+                "reward": 60
+            },
+            {
+                "rank": 4,
+                "reward": 40
+            },
+            {
+                "rank": 5,
+                "reward": 20
+            }
+        ],
+        "games": {
+            "TETR.IO": "https://tetr.io/"
+        },
+        "join": {
+            "Matrix": "https://matrix.to/#/#sss-momento-tetro:ryg.one",
+            "Telegram": "https://t.me/+xGeePCWZTcwxY2Iy"
+        },
+        "screenshots": [
+            {
+                "src": "https://i.imgur.com/qZLqugd.png",
+                "alt": {
+                    "it": "Un giocatore cerca di ottenere un All Clear in una partita da solo.",
+                    "en": "A player tries to get a All Clear in a solo game."
+                }
+            },
+            {
+                "src": "https://i.imgur.com/Nc6XRXF.png",
+                "alt": {
+                    "it": "60 giocatori si sfidano nella modalità Quick Play.",
+                    "en": "60 players battle in a Quick Play match."
+                }
+            }
+        ],
+        "it": {
+            "title": {
+                "main": "Momento Tetro",
+                "post": "Una grossa lobby su TETR.IO!"
+            },
+            "core": {
+                "about": {
+                    "description": "<p>Questa settimana ho deciso di organizzare una piccola lobby di <dfn><a href=\"https://tetr.io/\">TETR.IO</a></dfn>, un <b>puzzle game competitivo</b> in cui bisogna impilare tetramini in modo da completare linee più efficientemente degli avversari.</p><p>Penso di aver trovato un setup per avere partite divertenti tra giocatori di qualsiasi livello di abilità, e volevo sperimentarlo insieme a voi!"
+                }
+            }
+        },
+        "en": {
+            "title": {
+                "main": "Tetra Moment",
+                "post": "A big TETR.IO lobby!"
+            },
+            "core": {
+                "about": {
+                    "description": "<p>This week I decided to organize a small lobby in <dfn><a href=\"https://tetr.io/\">TETR.IO</a></dfn>, a <b>competitive puzzle game</b> where you have to stack tetrominos to complete lines more efficiently than your opponents.</p><p>I think I found a setup to have fun matches between players of all skill levels, and I wanted to try it out with you all!"
+                }
+            }
+        }
+    },
+    {
+        "id": "nerts-or-nothing",
+        "icon": "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/layer-group.png",
+        "date": "2023-04-06T21:00+0200",
+        "finished": true,
+        "placements": [
+            {
+                "rank": 1,
+                "name": "xZefyr",
+                "reward": 50
+            },
+            {
+                "rank": 2,
+                "name": "Viktya",
+                "reward": 40
+            },
+            {
+                "rank": 3,
+                "name": "Eldavo",
+                "reward": 30
+            },
+            {
+                "rank": 4,
+                "name": "Gattopandacorno",
+                "reward": 20
+            },
+            {
+                "rank": 5,
+                "name": "Steffo",
+                "reward": 10
+            }
+        ],
+        "games": {
+            "Steam": "https://store.steampowered.com/app/1131190/"
+        },
+        "join": {
+            "Matrix": "https://matrix.to/#/#sss-momento-tetro:ryg.one",
+            "Telegram": "https://t.me/+xGeePCWZTcwxY2Iy"
+        },
+        "screenshots": [
+            {
+                "src": "https://steamuserimages-a.akamaihd.net/ugc/2059874233254322702/1FA4D90E9C44475B29BBB1C37274C63D3B256AE8/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                "alt": {
+                    "it": "Le regole."
+                }
+            },
+            {
+                "src": "https://steamuserimages-a.akamaihd.net/ugc/1690526646633093224/350EF79FA1B6C1A77827BC7365AF78EF01564F7B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+                "alt": {
+                    "it": "Uno screenshot del gioco."
+                }
+            }
+        ],
+        "it": {
+            "title": {
+                "main": "NERTS or Nothing!",
+                "post": "Un torneo di solitario competitivo?!"
+            },
+            "core": {
+                "about": {
+                    "description": "<p><dfn><a href=\"https://en.wikipedia.org/wiki/Nerts\">NERTS</a></dfn> è un gioco di carte che adatta le regole del classico <a href=\"https://it.wikipedia.org/wiki/Klondike_(solitario)\">solitario Klondike</a> a gruppi di fino a 6 giocatori.</p><p>Completa il tuo solitario mentre tieni d'occhio il progresso degli altri per aiutarli o ostacolarli, segnando punti che ti permetteranno di vincere la partita!</p>"
+                }
+            }
+        }
+    }
+]
