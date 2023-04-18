@@ -180,6 +180,11 @@ img.panel {
     font-size: small;
 }
 
+#widget {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 .placement-rank {
     text-align: right;
 }
