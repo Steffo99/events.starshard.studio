@@ -3,11 +3,10 @@ layout: base
 
 s:
     en:
-        core:
+        widget:
             join:
                 title: "When does the event start?"
                 content1: "The event will begin:"
-        extra:
             placements:
                 title: "Placements"
                 rank: "Rank"
@@ -15,11 +14,10 @@ s:
                 score: "Score"
                 reward: "Reward"
     it:
-        core:
+        widget:
             join:
                 title: "Quando inizia l'evento?"
                 content1: "L'evento avrà inizio:"
-        extra:
             placements:
                 title: "Piazzamenti"
                 rank: "Posizione"
@@ -28,35 +26,32 @@ s:
                 reward: "Ricompensa"
 ---
 
-<div id="cta" class="chapter-2">
-    <section id="core-join" class="panel box width-max1">
-        <h3 id="core-join-title">
-            {{ s[lang].core.join.title | safe }}
+<div id="widget" class="chapter-1">
+    <section id="widget-join" class="panel box width-max1">
+        <h3 id="widget-join-title">
+            {{ s[lang].widget.join.title | safe }}
         </h3>
         <p>
-            {{ s[lang].core.join.content1 | safe }}
+            {{ s[lang].widget.join.content1 | safe }}
         </p>
-        <div id="core-join-date" class="panel date">
-            <time id="core-join-date-relative" datetime="{{ s.date }}" data-render="relative-long">{{ s.date }}</time>
-            <time id="core-join-date-absolute" datetime="{{ s.date }}" data-render="datetime">{{ s.date }}</time>
+        <div id="widget-join-date" class="panel date">
+            <time id="widget-join-date-relative" datetime="{{ s.date }}" data-render="relative-long">{{ s.date }}</time>
+            <time id="widget-join-date-absolute" datetime="{{ s.date }}" data-render="datetime">{{ s.date }}</time>
         </div>
     </section>
-</div>
-
-<div id="extra" class="chapter-2">
     {% if s.placements %}
-        <table id="extra-placements" class="panel box width-max1">
+        <table id="widget-placements" class="panel box width-max1">
             <caption class="table-caption-top">
                 <h3>
-                    {{ s[lang].extra.placements.title }}
+                    {{ s[lang].widget.placements.title }}
                 </h3>
             </caption>
             <thead>
                 <tr>
-                    <th>{{ s[lang].extra.placements.rank }}</th>
-                    <th>{{ s[lang].extra.placements.name }}</th>
-                    <th>{{ s[lang].extra.placements.score }}</th>
-                    <th>{{ s[lang].extra.placements.reward }}</th>
+                    <th>{{ s[lang].widget.placements.rank }}</th>
+                    <th>{{ s[lang].widget.placements.name }}</th>
+                    <th>{{ s[lang].widget.placements.score }}</th>
+                    <th>{{ s[lang].widget.placements.reward }}</th>
                 </tr>
             </thead>
             <tbody>
