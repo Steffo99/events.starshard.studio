@@ -49,8 +49,10 @@ s:
             <thead>
                 <tr>
                     <th>{{ s[lang].widget.placements.rank }}</th>
-                    <th>{{ s[lang].widget.placements.name }}</th>
-                    <th>{{ s[lang].widget.placements.score }}</th>
+                    {% if s.finished %}
+                        <th>{{ s[lang].widget.placements.name }}</th>
+                        <th>{{ s[lang].widget.placements.score }}</th>
+                    {% endif %}
                     <th>{{ s[lang].widget.placements.reward }}</th>
                 </tr>
             </thead>
@@ -60,12 +62,14 @@ s:
                         <td class="placement-rank">
                             {{ placement.rank }}
                         </td>
-                        <td class="placement-name">
-                            {{ placement.name }}
-                        </td>
-                        <td class="placement-score">
-                            {{ placement.score }}
-                        </td>
+                        {% if s.finished %}
+                            <td class="placement-name">
+                                {{ placement.name }}
+                            </td>
+                            <td class="placement-score">
+                                {{ placement.score }}
+                            </td>
+                        {% endif %}
                         <td class="placement-reward" title="{{ s[lang].event.valueHint }}">
                             <span class="placement-reward-symbol">
                                 ¤
