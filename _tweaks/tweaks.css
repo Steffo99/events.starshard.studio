@@ -12,6 +12,14 @@
     --bhsl-bronze-lightness: 62%;
 }
 
+body {
+    padding: 8px;
+}
+
+footer {
+    margin-bottom: 0;
+}
+
 .icon {
 	display: inline-block;
 	height: 1.2em;
