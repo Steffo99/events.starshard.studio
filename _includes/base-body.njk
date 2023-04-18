@@ -1,6 +1,4 @@
 <body class="layout-center">
     {% include "base-background.njk" %}
-    {% include "base-header.njk" %}
-    {% include "base-main.njk" %}
-    {% include "base-footer.njk" %}
+    {{ content | safe }}
 </body>
