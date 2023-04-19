@@ -56,43 +56,33 @@ img.panel {
     }
 }
 
-.placement-rank {
-    font-weight: 800;
-}
-
 .rank-1 {
-	font-size: xx-large;
-
     --bhsl-current-hue: var(--bhsl-gold-hue);
     --bhsl-current-saturation: var(--bhsl-gold-saturation);
     --bhsl-current-lightness: var(--bhsl-gold-lightness);
 }
 
-.rank-1 td {
+.rank-1 :is(td, th) {
     background-color: hsl(var(--bhsl-gold-hue) var(--bhsl-gold-saturation) var(--bhsl-gold-lightness) / 0.1)
 }
 
 .rank-2 {
-	font-size: x-large;
-
     --bhsl-current-hue: var(--bhsl-silver-hue);
     --bhsl-current-saturation: var(--bhsl-silver-saturation);
     --bhsl-current-lightness: var(--bhsl-silver-lightness);
 }
 
-.rank-2 td {
+.rank-2 :is(td, th) {
     background-color: hsl(var(--bhsl-silver-hue) var(--bhsl-silver-saturation) var(--bhsl-silver-lightness) / 0.1)
 }
 
 .rank-3 {
-	font-size: large;
-
     --bhsl-current-hue: var(--bhsl-bronze-hue);
     --bhsl-current-saturation: var(--bhsl-bronze-saturation);
     --bhsl-current-lightness: var(--bhsl-bronze-lightness);
 }
 
-.rank-3 td {
+.rank-3 :is(td, th) {
     background-color: hsl(var(--bhsl-bronze-hue) var(--bhsl-bronze-saturation) var(--bhsl-bronze-lightness) / 0.1)
 }
 
@@ -202,5 +192,5 @@ img.panel {
 }
 
 .placement-reward-number {
-    font-weight: 800;
+    font-weight: 500;
 }
