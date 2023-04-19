@@ -69,7 +69,7 @@ img.panel {
 }
 
 .rank-1 td {
-    background-color: hsl(var(--bhsl-gold-hue) var(--bhsl-gold-saturation) var(--bhsl-gold-lightness) / var(--b-panel-initial-opacity))
+    background-color: hsl(var(--bhsl-gold-hue) var(--bhsl-gold-saturation) var(--bhsl-gold-lightness) / 0.1)
 }
 
 .rank-2 {
@@ -81,7 +81,7 @@ img.panel {
 }
 
 .rank-2 td {
-    background-color: hsl(var(--bhsl-silver-hue) var(--bhsl-silver-saturation) var(--bhsl-silver-lightness) / var(--b-panel-initial-opacity))
+    background-color: hsl(var(--bhsl-silver-hue) var(--bhsl-silver-saturation) var(--bhsl-silver-lightness) / 0.1)
 }
 
 .rank-3 {
@@ -93,7 +93,7 @@ img.panel {
 }
 
 .rank-3 td {
-    background-color: hsl(var(--bhsl-bronze-hue) var(--bhsl-bronze-saturation) var(--bhsl-bronze-lightness) / var(--b-panel-initial-opacity))
+    background-color: hsl(var(--bhsl-bronze-hue) var(--bhsl-bronze-saturation) var(--bhsl-bronze-lightness) / 0.1)
 }
 
 .cta {
