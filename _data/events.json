@@ -3,27 +3,19 @@
         "id": "momento-tetro",
         "icon": "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/cubes-stacked.png",
         "date": "2023-04-20T21:00+0200",
-        "finished": false,
+        "finished": true,
         "placements": [
             {
                 "rank": 1,
-                "reward": 100
+                "reward": 100,
+                "score": "-",
+                "name": "Steffo"
             },
             {
                 "rank": 2,
-                "reward": 80
-            },
-            {
-                "rank": 3,
-                "reward": 60
-            },
-            {
-                "rank": 4,
-                "reward": 40
-            },
-            {
-                "rank": 5,
-                "reward": 20
+                "reward": 80,
+                "score": "14m 57s",
+                "name": "Nemesis"
             }
         ],
         "games": {
