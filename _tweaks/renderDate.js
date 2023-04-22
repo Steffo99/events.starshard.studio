@@ -5,8 +5,6 @@ function renderTime() {
 	for(const element of document.querySelectorAll('time[data-render]')) {
 		const format = element.getAttribute("data-render")
 		const date = new Date(element.dateTime)
-		element.title = date.toString()
-
 
 		if(format === "relative-short") {
             const renderer = new Intl.RelativeTimeFormat(root.lang, {style: "short"})

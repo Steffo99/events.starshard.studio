@@ -27,6 +27,7 @@ s:
                 content: "All events we organized, from the newest to the oldest."
 
         event:
+            descriptionHint: "Event description"
             dateHint: "Start date"
             countHint: "Number of partecipants"
             leadingHint: "Leading player"
@@ -51,6 +52,7 @@ s:
                 content: "Tutti gli eventi che abbiamo organizzato, dal più recente al più vecchio."
 
         event:
+            descriptionHint: "Descrizione dell'evento"
             dateHint: "Data di inizio"
             countHint: "Numero di partecipanti"
             leadingHint: "Giocatore in testa"
@@ -93,38 +95,40 @@ s:
                                 {{ event[lang].title.main }}
                             </a>
                         </h4>
-                        <div class="event-description">
-                            {{ event[lang].title.post | safe }}
-                        </div>
                         <div class="event-date" title="{{ s[lang].event.dateHint }}">
                             <time datetime="{{ event.date }}" data-render="date">{{ event.date }}</time>
                         </div>
+                        <div class="event-description" title="{{ s[lang].event.descriptionHint }}">
+                            {{ event[lang].title.post | safe }}
+                        </div>
                         <div class="event-placements">
-                            {% if event.finished %}
+                            {% if event.placements | selectattr("name") | length > 1 %}
                                 <span class="event-placements-count" title="{{ s[lang].event.countHint }}">
-                                    <span class="event-placements-count-symbol">
-                                        ☻
+                                    <span class="event-placements-count-symbol" aria-label="{{ s[lang].event.countHint }}">
+                                        ♙
                                     </span>
                                     <span class="event-placements-count-number">
-                                        {{ event.placements | length }}
+                                        {{ event.placements | selectattr("name") | length }}
                                     </span>
                                 </span>
-                                ·
-                            {% endif %}
-                            {% if event.placements[0].name %}
+                                <span class="events-placements-connector" role="separator">
+                                    ·
+                                </span>
                                 <span class="event-placements-leading" title="{{ s[lang].event.leadingHint }}">
-                                    <span class="event-placements-leading-symbol">
-                                        ✰
+                                    <span class="event-placements-leading-symbol" aria-label="{{ s[lang].event.leadingHint }}">
+                                        ♔
                                     </span>
                                     <span class="event-placements-leading-name">
                                         {{ event.placements[0].name }}
                                     </span>
                                 </span>
-                                ·
+                                <span class="events-placements-connector" role="separator">
+                                    ·
+                                </span>
                             {% endif %}
                             {% if event.placements[0].reward %}
                                 <span class="event-placements-reward placement-reward" title="{{ s[lang].event.valueHint }}">
-                                    <span class="event-placement-reward-symbol placement-reward-symbol">
+                                    <span class="event-placement-reward-symbol placement-reward-symbol" aria-label="{{ s[lang].event.valueHint }}">
                                         ¤
                                     </span>
                                     <span class="event-placement-reward-number placement-reward-number">
