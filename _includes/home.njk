@@ -28,6 +28,7 @@ s:
 
         event:
             dateHint: "Start date"
+            countHint: "Number of partecipants"
             leadingHint: "Leading player"
             valueHint: "First place reward"
 
@@ -51,6 +52,7 @@ s:
 
         event:
             dateHint: "Data di inizio"
+            countHint: "Numero di partecipanti"
             leadingHint: "Giocatore in testa"
             valueHint: "Premio primo posto"
 ---
@@ -98,6 +100,17 @@ s:
                             <time datetime="{{ event.date }}" data-render="date">{{ event.date }}</time>
                         </div>
                         <div class="event-placements">
+                            {% if event.finished %}
+                                <span class="event-placements-count" title="{{ s[lang].event.countHint }}">
+                                    <span class="event-placements-count-symbol">
+                                        ☻
+                                    </span>
+                                    <span class="event-placements-count-number">
+                                        {{ event.placements | length }}
+                                    </span>
+                                </span>
+                                ·
+                            {% endif %}
                             {% if event.placements[0].name %}
                                 <span class="event-placements-leading" title="{{ s[lang].event.leadingHint }}">
                                     <span class="event-placements-leading-symbol">
