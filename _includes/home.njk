@@ -99,11 +99,13 @@ s:
                         </div>
                         <div class="event-placements">
                             {% if event.placements[0].name %}
-                                <span class="event-placements-leading-symbol" title="{{ s[lang].event.leadingHint }}">
-                                    ✰
-                                </span>
-                                <span class="event-placements-leading-name" title="{{ s[lang].event.leadingHint }}">
-                                    {{ event.placements[0].name }}
+                                <span class="event-placements-leading" title="{{ s[lang].event.leadingHint }}">
+                                    <span class="event-placements-leading-symbol">
+                                        ✰
+                                    </span>
+                                    <span class="event-placements-leading-name">
+                                        {{ event.placements[0].name }}
+                                    </span>
                                 </span>
                                 ·
                             {% endif %}
