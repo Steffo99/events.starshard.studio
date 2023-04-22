@@ -18,7 +18,7 @@
                 "name": "Nemesis"
             }
         ],
-        "games": {
+        "play": {
             "TETR.IO": "https://tetr.io/"
         },
         "join": {
@@ -96,7 +96,7 @@
                 "reward": 10
             }
         ],
-        "games": {
+        "play": {
             "Steam": "https://store.steampowered.com/app/1131190/"
         },
         "join": {
