@@ -1,5 +1,100 @@
 [
     {
+        "id": "garasrumble",
+        "icon": "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/car-on.png",
+        "date": "2023-05-04T21:00+0200",
+        "finished": false,
+        "placements": [
+            {
+                "rank": 1,
+                "reward": 100
+            },
+            {
+                "rank": 1,
+                "reward": 100
+            },
+            {
+                "rank": 2,
+                "reward": 80
+            },
+            {
+                "rank": 2,
+                "reward": 80
+            },
+            {
+                "rank": 3,
+                "reward": 60
+            },
+            {
+                "rank": 3,
+                "reward": 60
+            },
+            {
+                "rank": 4,
+                "reward": 40
+            },
+            {
+                "rank": 4,
+                "reward": 40
+            }
+        ],
+        "play": {
+            "Steam": "https://store.steampowered.com/app/252950/Rocket_League/",
+            "Epic Games": "https://store.epicgames.com/en-US/p/rocket-league",
+            "PlayStation": "https://store.playstation.com/en-us/product/UP2002-CUSA01163_00-ROCKETLEAGUENA01/",
+            "Xbox": "https://store.xbox.com/en-US/Xbox-One/Games/Rocket-League/233becfb-c914-4ef4-9a73-398e8195f00a",
+            "Nintendo Switch": "https://www.nintendo.com/store/products/rocket-league-switch/"
+        },
+        "join": {
+            "Matrix": "https://matrix.to/#/#sss-garasrumble:ryg.one"
+        },
+        "screenshots": [
+            {
+                "src": "https://i.imgur.com/uJahEi5.png",
+                "alt": {
+                    "it": "Un'auto nel menu principale.",
+                    "en": "A car in the main menu."
+                }
+            },
+            {
+                "src": "https://i.imgur.com/WpfMCQv.png",
+                "alt": {
+                    "it": "Una macchina colpisce un pallone ala calcio di inizio.",
+                    "en": "A car hits the ball at kickoff."
+                }
+            },
+            {
+                "src": "https://i.imgur.com/FXNGVX9.png",
+                "alt": {
+                    "it": "Steffo segna un gol utilizzando un magnete.",
+                    "en": "Steffo scores a goal using a magnet."
+                }
+            }
+        ],
+        "it": {
+            "title": {
+                "main": "Garasrumble",
+                "post": "Un torneo a coppie di Rocket League Rissa!"
+            },
+            "core": {
+                "about": {
+                    "description": "<p><dfn>Rocket League</dfn>. Immagino abbiate sentito tutti parlare del gioco in cui automobili giocano a calcio con una palla gigante…</p><p>Ha una modalità a mio parere molto sottovalutata: <i>Rissa</i>!</p><p>Fornisce periodicamente ai giocatori un potenziamento casuale tra gli undici disponibili, e gli permette di decidere quando usarlo.</p><p>In passato, l'ho giocata un sacco assieme ad un amico; ora voglio vedere come ve la cavate voi: siete pronti?!"
+                }
+            }
+        },
+        "en": {
+            "title": {
+                "main": "Garasrumble",
+                "post": "A duos Rocket League Rumble tournament!"
+            },
+            "core": {
+                "about": {
+                    "description": "<p><dfn>Rocket League</dfn>. You should've heard of the game where cars play soccer with a giant metal ball…</p><p>I feel that one of its game modes is very underrated: <i>Rumble</i>!</p><p>It gives players a random power-up among a pool of 11, and allows them to decide when to use it.</p><p>In the past, me and a friend played it a lot; now, I want to see how well you all can play it: are you ready?!"
+                }
+            }
+        }
+    },
+    {
         "id": "momento-tetro",
         "icon": "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/cubes-stacked.png",
         "date": "2023-04-20T21:00+0200",
