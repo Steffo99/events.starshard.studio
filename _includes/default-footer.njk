@@ -12,7 +12,12 @@
             {%- endif -%}
         </a>:
         <a href="https://fontawesome.com/">Font Awesome</a>
-        (<a href="https://fontawesome.com/license/free">CC-BY-4.0</a>)
+        (<a href="https://fontawesome.com/license/free">CC-BY-4.0</a>),
+        {% if lang === "it" -%}
+            modificate
+            {% elif lang === "en" -%}
+            edited
+        {% endif -%}
     </span>
     &nbsp;|&nbsp;
     <span id="credit-background">
