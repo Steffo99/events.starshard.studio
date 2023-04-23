@@ -1,3 +1,6 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss")
+
+
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist");
 	eleventyConfig.addPassthroughCopy("./_tweaks");
@@ -13,4 +16,16 @@ module.exports = function(eleventyConfig) {
                 .map(char => 0x1F1A5 + char.charCodeAt())
         )
 	})
+
+    eleventyConfig.addFilter("stringToDate", function(value) {
+        return new Date(value)
+    })
+    eleventyConfig.addFilter("mapattr", function(value, attr) {
+        let n = []
+        for(const v of value) {
+            n.push(v[attr])
+        }
+        return n
+    })
+    eleventyConfig.addPlugin(pluginRss);
 };

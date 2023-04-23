@@ -1,0 +1,46 @@
+---
+namespace: "https://events.starshard.studio"
+
+s:
+    en:
+        title:
+            main: "Star Shard Events"
+            post: "The future events!"
+    it:
+        title:
+            main: "Star Shard Events"
+            post: "Gli eventi futuri!"
+---
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ namespace }}/{{ lang }}/">
+    <id>{{ namespace }}/{{ lang }}/events/atom.xml</id>
+
+    <title>{{ s[lang].title.main }}</title>
+    <subtitle>{{ s[lang].title.post }}</subtitle>
+    <author>
+        <name>Stefano Pigozzi</name>
+        <email>me@steffo.eu</email>
+        <uri>https://www.steffo.eu/</uri>
+    </author>
+    <generator>Eleventy</generator>
+    <icon>https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/calendar-day.png</icon>
+    <rights>© Stefano Pigozzi</rights>
+    <link rel="alternate" href="/{{ lang }}/"/>
+    <link rel="self" href="/{{ lang }}/events/atom.xml"/>
+
+    <updated>{{ events | mapattr("updated") | sort(reverse=true) | first | stringToDate | dateToRfc3339 }}</updated>
+
+    {% for event in events | sort(reverse=true, attr="updated") %}
+        {% if event[lang] %}
+            <entry>
+                <id>{{ namespace }}/{{ lang }}/events/{{ event.id }}</id>
+                <title>{{ event[lang].title.main }}</title>
+                <link href="/{{ lang }}/events/{{ event.id }}/"/>
+                <summary>{{ event[lang].title.post }}</summary>
+                <updated>{{ event.updated | stringToDate | dateToRfc3339 }}</updated>
+            </entry>
+        {% endif %}
+    {% endfor %}
+
+</feed>

@@ -24,7 +24,9 @@ s:
             title: "What we're doing"
             events:
                 title: "Events"
-                content: "All events we organized, from the newest to the oldest."
+                content: |-
+                    All events we organized, from the newest to the oldest.
+                    Now available as a <a href="events/atom.xml">RSS feed</a>!
 
         event:
             descriptionHint: "Event description"
@@ -49,7 +51,9 @@ s:
             title: "Cosa stiamo facendo"
             events:
                 title: "Eventi"
-                content: "Tutti gli eventi che abbiamo organizzato, dal più recente al più vecchio."
+                content: |-
+                    Tutti gli eventi che abbiamo organizzato, dal più recente al più vecchio.
+                    Ora anche in forma di <a href="events/atom.xml">feed RSS</a>!
 
         event:
             descriptionHint: "Descrizione dell'evento"
@@ -86,7 +90,7 @@ s:
         </p>
         <hr/>
         <ul id="data-events-list">
-            {% for event in events %}
+            {% for event in events | sort(reverse=true, attr="updated") %}
                 {% if event[lang] %}
                     <li id="event-{{ event.id }}" class="event {% if event.finished %}fade{% endif %}">
                         <img alt="" class="event-icon icon" src="{{ event.icon }}"/>
