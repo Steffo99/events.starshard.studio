@@ -27,16 +27,57 @@ s:
 ---
 
 <div id="widget" class="chapter-1">
-    <section id="widget-join" class="panel box width-max1">
-        <h3 id="widget-join-title">
-            {{ s[lang].widget.join.title | safe }}
-        </h3>
-        <p>
-            {{ s[lang].widget.join.content1 | safe }}
-        </p>
-        <div id="widget-join-date" class="panel date">
-            <time id="widget-join-date-relative" datetime="{{ s.date }}" data-render="relative-long">{{ s.date }}</time>
-            <time id="widget-join-date-absolute" datetime="{{ s.date }}" data-render="datetime">{{ s.date }}</time>
-        </div>
-    </section>
+    {% if s.finished %}
+        <section id="widget-join" class="panel box width-max1">
+            <h3 id="widget-join-title">
+                {{ s[lang].widget.join.title | safe }}
+            </h3>
+            <p>
+                {{ s[lang].widget.join.content1 | safe }}
+            </p>
+            <div id="widget-join-date" class="panel date">
+                <time id="widget-join-date-relative" datetime="{{ s.date }}" data-render="relative-long">{{ s.date }}</time>
+                <time id="widget-join-date-absolute" datetime="{{ s.date }}" data-render="datetime">{{ s.date }}</time>
+            </div>
+        </section>
+    {% else %}
+        <table id="widget-placements" class="panel box width-max1">
+            <caption class="table-caption-top">
+                <h3>
+                    {{ s[lang].widget.placements.title }}
+                </h3>
+            </caption>
+            <thead>
+                <tr>
+                    <th>{{ s[lang].widget.placements.rank }}</th>
+                    <th>{{ s[lang].widget.placements.name }}</th>
+                    <th>{{ s[lang].widget.placements.score }}</th>
+                    <th>{{ s[lang].widget.placements.reward }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for placement in s.placements %}
+                    <tr class="rank-{{ placement.rank }}">
+                        <td class="placement-rank">
+                            {{ placement.rank }}
+                        </td>
+                        <th scope="row" class="placement-name">
+                            {{ placement.name }}
+                        </th>
+                        <td class="placement-score">
+                            {{ placement.score }}
+                        </td>
+                        <td class="placement-reward" title="{{ s[lang].event.valueHint }}">
+                            <span class="placement-reward-symbol">
+                                ¤
+                            </span>
+                            <span class="placement-reward-number">
+                                {{ placement.reward }}
+                            </span>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
 </div>
