@@ -28,19 +28,6 @@ s:
 
 <div id="widget" class="chapter-1">
     {% if s.finished %}
-        <section id="widget-join" class="panel box width-max1">
-            <h3 id="widget-join-title">
-                {{ s[lang].widget.join.title | safe }}
-            </h3>
-            <p>
-                {{ s[lang].widget.join.content1 | safe }}
-            </p>
-            <div id="widget-join-date" class="panel date">
-                <time id="widget-join-date-relative" datetime="{{ s.date }}" data-render="relative-long">{{ s.date }}</time>
-                <time id="widget-join-date-absolute" datetime="{{ s.date }}" data-render="datetime">{{ s.date }}</time>
-            </div>
-        </section>
-    {% else %}
         <table id="widget-placements" class="panel box width-max1">
             <caption class="table-caption-top">
                 <h3>
@@ -79,5 +66,18 @@ s:
                 {% endfor %}
             </tbody>
         </table>
+    {% else %}
+        <section id="widget-join" class="panel box width-max1">
+            <h3 id="widget-join-title">
+                {{ s[lang].widget.join.title | safe }}
+            </h3>
+            <p>
+                {{ s[lang].widget.join.content1 | safe }}
+            </p>
+            <div id="widget-join-date" class="panel date">
+                <time id="widget-join-date-relative" datetime="{{ s.date }}" data-render="relative-long">{{ s.date }}</time>
+                <time id="widget-join-date-absolute" datetime="{{ s.date }}" data-render="datetime">{{ s.date }}</time>
+            </div>
+        </section>
     {% endif %}
 </div>
