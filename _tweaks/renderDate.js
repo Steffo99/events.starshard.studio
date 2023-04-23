@@ -38,4 +38,5 @@ function renderTime() {
 
 window.onload = function() {
 	renderTime()
+    setInterval(renderTime, 60000)
 }
