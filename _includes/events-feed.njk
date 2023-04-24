@@ -32,7 +32,7 @@ s:
     <updated>{{ events | mapattr("updated") | sort(reverse=true) | first | stringToDate | dateToRfc3339 }}</updated>
 
     {% for event in events | sort(reverse=true, attr="updated") %}
-        {% if event[lang] %}
+        {% if event.published and event[lang] %}
             <entry>
                 <id>{{ namespace }}/{{ lang }}/events/{{ event.id }}</id>
                 <title>{{ event[lang].title.main }}</title>

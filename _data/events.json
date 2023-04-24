@@ -4,6 +4,7 @@
         "updated": "2023-04-24T01:11:00+0200",
         "icon": "https://raw.githubusercontent.com/starshardstudio/emblems/main/custom/garasrumble.png",
         "date": "2023-05-04T21:00+0200",
+        "published": true,
         "finished": false,
         "placements": [
             {
@@ -101,6 +102,7 @@
         "updated": "2023-04-23T03:49:01+0200",
         "icon": "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/cubes-stacked.png",
         "date": "2023-04-20T21:00+0200",
+        "published": true,
         "finished": true,
         "placements": [
             {
@@ -167,6 +169,7 @@
         "updated": "2023-04-23T03:49:00+0200",
         "icon": "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/layer-group.png",
         "date": "2023-04-06T21:00+0200",
+        "published": true,
         "finished": true,
         "placements": [
             {

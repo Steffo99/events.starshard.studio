@@ -91,7 +91,7 @@ s:
         <hr/>
         <ul id="data-events-list">
             {% for event in events | sort(reverse=true, attr="updated") %}
-                {% if event[lang] %}
+                {% if event.published and event[lang] %}
                     <li id="event-{{ event.id }}" class="event {% if event.finished %}fade{% endif %}">
                         <img alt="" class="event-icon icon" src="{{ event.icon }}"/>
                         <h4 class="event-title">
