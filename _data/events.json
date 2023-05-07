@@ -5,41 +5,8 @@
         "icon": "https://raw.githubusercontent.com/starshardstudio/emblems/main/custom/garasrumble.png",
         "date": "2023-05-04T21:00+0200",
         "published": true,
-        "finished": false,
-        "placements": [
-            {
-                "rank": 1,
-                "reward": 100
-            },
-            {
-                "rank": 1,
-                "reward": 100
-            },
-            {
-                "rank": 2,
-                "reward": 80
-            },
-            {
-                "rank": 2,
-                "reward": 80
-            },
-            {
-                "rank": 3,
-                "reward": 60
-            },
-            {
-                "rank": 3,
-                "reward": 60
-            },
-            {
-                "rank": 4,
-                "reward": 40
-            },
-            {
-                "rank": 4,
-                "reward": 40
-            }
-        ],
+        "finished": true,
+        "placements": [],
         "play": {
             "Steam": "https://store.steampowered.com/app/252950/Rocket_League/",
             "Epic Games": "https://store.epicgames.com/en-US/p/rocket-league",
