@@ -54,6 +54,11 @@
                 "cancelled": {
                     "description": "Il giorno del torneo non si sono presentati sufficienti partecipanti perchè il torneo potesse svolgersi."
                 }
+            },
+            "widget": {
+                "cancelled": {
+                    "description": "Il giorno del torneo non si sono presentati sufficienti partecipanti perchè il torneo potesse svolgersi."
+                }
             }
         },
         "en": {
@@ -65,6 +70,11 @@
                 "about": {
                     "description": "<p><dfn>Rocket League</dfn>. You should've heard of the game where cars play soccer with a giant metal ball…</p><p>I feel that one of its game modes is very underrated: <i>Rumble</i>!</p><p>It gives players a random power-up among a pool of 11, and allows them to decide when to use it.</p><p>In the past, me and a friend played it a lot; now, I want to see how well you all can play it in a <b>2v2 tournament</b>: are you ready?!"
                 },
+                "cancelled": {
+                    "description": "Not enough partecipants showed up on the day of the tournament for the competition to have place."
+                }
+            },
+            "widget": {
                 "cancelled": {
                     "description": "Not enough partecipants showed up on the day of the tournament for the competition to have place."
                 }
