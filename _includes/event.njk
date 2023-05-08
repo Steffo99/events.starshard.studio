@@ -16,16 +16,18 @@ s:
                 content1: "The event will begin:"
                 content2: "Sign up before then!"
                 cta: "Sign up now: "
-        screenshots:
-            title: "Screenshots"
-        extra:
-            title: "Additional information"
             placements:
                 title: "Placements"
+                description: "The event concluded with the following results:"
                 rank: "Rank"
                 name: "Name"
                 score: "Score"
                 reward: "Reward"
+            cancelled:
+                title: "Event cancelled"
+                description: "The event was cancelled and will not take place."
+        screenshots:
+            title: "Screenshots"
     it:
         title:
             pre: |-
@@ -40,16 +42,18 @@ s:
                 content1: "L'evento avrà inizio:"
                 content2: "Iscriviti prima di allora!"
                 cta: "Iscriviti ora: "
-        screenshots:
-            title: "Screenshot"
-        extra:
-            title: "Informazioni aggiuntive"
             placements:
                 title: "Piazzamenti"
+                description: "L'evento è terminato con i seguenti risultati:"
                 rank: "Posizione"
                 name: "Nome"
                 score: "Punteggio"
                 reward: "Ricompensa"
+            cancelled:
+                title: "Evento annullato"
+                description: "L'evento è stato annullato e non avrà luogo."
+        screenshots:
+            title: "Screenshot"
 ---
 
 <div id="core" class="chapter-2">
@@ -73,62 +77,31 @@ s:
             </p>
         {% endif %}
     </section>
-    <section id="core-join" class="panel box width-max1">
-        <h3 id="core-join-title">
-            {{ s[lang].core.join.title | safe }}
-        </h3>
-        <p>
-            {{ s[lang].core.join.content1 | safe }}
-        </p>
-        <div id="core-join-date" class="panel date">
-            <time id="core-join-date-relative" datetime="{{ s.date }}" data-render="relative-long">{{ s.date }}</time>
-            <time id="core-join-date-absolute" datetime="{{ s.date }}" data-render="datetime">{{ s.date }}</time>
-        </div>
-        <p>
-            {{ s[lang].core.join.content2 | safe }}
-        </p>
-        {% if s.join %}
-            <hr class="float-bottom"/>
-            <p id="core-join-cta" class="cta">
-                <span>
-                    {{ s[lang].core.join.cta }}
-                </span>
-                {% for service_name, service_url in s.join %}
-                    <a href="{{ service_url }}"><button>{{ service_name }}</button></a>
-                {% endfor %}
+    {% if s.cancelled %}
+        <section id="core-cancelled" class="panel box width-max1 red">
+            <h3 id="core-cancelled-title">
+                {{ s[lang].core.cancelled.title }}
+            </h3>
+            <p id="core-cancelled-description">
+                {{ s[lang].core.cancelled.description | safe }}
             </p>
-        {% endif %}
-    </section>
-</div>
-
-<div id="screenshots" class="chapter-3">
-    <h2>
-        {{ s[lang].screenshots.title }}
-    </h2>
-    {% if s.screenshots %}
-            {% for screenshot in s.screenshots %}
-                <img class="panel box width-max1" alt="{{ screenshot.alt[lang] }}" title="{{ screenshot.alt[lang] }}" src="{{ screenshot.src }}">
-            {% endfor %}
-    {% endif %}
-</div>
-
-<div id="extra" class="chapter-2">
-    <h2 id="extra-title">
-        {{ s[lang].extra.title }}
-    </h2>
-    {% if s.placements %}
-        <table id="extra-placements" class="panel box width-max1">
+        </section>
+    {% elif s.finished %}
+        <table id="core-placements" class="panel box width-max1">
             <caption class="table-caption-top">
-                <h3>
-                    {{ s[lang].extra.placements.title }}
+                <h3 id="core-placements-title">
+                    {{ s[lang].core.placements.title }}
                 </h3>
+                <p id="core-placements-description">
+                    {{ s[lang].core.placements.description | safe }}
+                </p>
             </caption>
             <thead>
                 <tr>
-                    <th>{{ s[lang].extra.placements.rank }}</th>
-                    <th>{{ s[lang].extra.placements.name }}</th>
-                    <th>{{ s[lang].extra.placements.score }}</th>
-                    <th>{{ s[lang].extra.placements.reward }}</th>
+                    <th>{{ s[lang].core.placements.rank }}</th>
+                    <th>{{ s[lang].core.placements.name }}</th>
+                    <th>{{ s[lang].core.placements.score }}</th>
+                    <th>{{ s[lang].core.placements.reward }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -144,16 +117,54 @@ s:
                             {{ placement.score }}
                         </td>
                         <td class="placement-reward" title="{{ s[lang].event.valueHint }}">
-                            <span class="placement-reward-symbol">
-                                ¤
-                            </span>
+                                <span class="placement-reward-symbol">
+                                    ¤
+                                </span>
                             <span class="placement-reward-number">
-                                {{ placement.reward }}
-                            </span>
+                                    {{ placement.reward }}
+                                </span>
                         </td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
+    {% else %}
+        <section id="core-join" class="panel box width-max1">
+            <h3 id="core-join-title">
+                {{ s[lang].core.join.title | safe }}
+            </h3>
+            <p>
+                {{ s[lang].core.join.content1 | safe }}
+            </p>
+            <div id="core-join-date" class="panel date">
+                <time id="core-join-date-relative" datetime="{{ s.date }}" data-render="relative-long">{{ s.date }}</time>
+                <time id="core-join-date-absolute" datetime="{{ s.date }}" data-render="datetime">{{ s.date }}</time>
+            </div>
+            <p>
+                {{ s[lang].core.join.content2 | safe }}
+            </p>
+            {% if s.join %}
+                <hr class="float-bottom"/>
+                <p id="core-join-cta" class="cta">
+                    <span>
+                        {{ s[lang].core.join.cta }}
+                    </span>
+                    {% for service_name, service_url in s.join %}
+                        <a href="{{ service_url }}"><button>{{ service_name }}</button></a>
+                    {% endfor %}
+                </p>
+            {% endif %}
+        </section>
+    {% endif %}
+</div>
+
+<div id="screenshots" class="chapter-3">
+    <h2>
+        {{ s[lang].screenshots.title }}
+    </h2>
+    {% if s.screenshots %}
+            {% for screenshot in s.screenshots %}
+                <img class="panel box width-max1" alt="{{ screenshot.alt[lang] }}" title="{{ screenshot.alt[lang] }}" src="{{ screenshot.src }}">
+            {% endfor %}
     {% endif %}
 </div>

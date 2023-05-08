@@ -9,10 +9,14 @@ s:
                 content1: "The event will begin:"
             placements:
                 title: "Placements"
+                description: "The event concluded with the following results:"
                 rank: "Rank"
                 name: "Name"
                 score: "Score"
                 reward: "Reward"
+            cancelled:
+                title: "Event cancelled"
+                description: "The event was cancelled and will not take place."
     it:
         widget:
             join:
@@ -20,19 +24,35 @@ s:
                 content1: "L'evento avrà inizio:"
             placements:
                 title: "Piazzamenti"
+                description: "L'evento è terminato con i seguenti risultati:"
                 rank: "Posizione"
                 name: "Nome"
                 score: "Punteggio"
                 reward: "Ricompensa"
+            cancelled:
+                title: "Evento annullato"
+                description: "L'evento è stato annullato e non sarà svolto."
 ---
 
 <div id="widget" class="chapter-1">
-    {% if s.finished %}
+    {% if s.cancelled %}
+        <section id="widget-cancelled" class="panel box width-max1 red">
+            <h3 id="widget-cancelled-title">
+                {{ s[lang].widget.cancelled.title }}
+            </h3>
+            <p id="widget-cancelled-description">
+                {{ s[lang].widget.cancelled.description | safe }}
+            </p>
+        </section>
+        {% elif s.finished %}
         <table id="widget-placements" class="panel box width-max1">
             <caption class="table-caption-top">
-                <h3>
+                <h3 id="widget-placements-title">
                     {{ s[lang].widget.placements.title }}
                 </h3>
+                <p id="widget-placements-description">
+                    {{ s[lang].widget.placements.description | safe }}
+                </p>
             </caption>
             <thead>
                 <tr>
@@ -55,12 +75,12 @@ s:
                             {{ placement.score }}
                         </td>
                         <td class="placement-reward" title="{{ s[lang].event.valueHint }}">
-                            <span class="placement-reward-symbol">
-                                ¤
-                            </span>
+                                <span class="placement-reward-symbol">
+                                    ¤
+                                </span>
                             <span class="placement-reward-number">
-                                {{ placement.reward }}
-                            </span>
+                                    {{ placement.reward }}
+                                </span>
                         </td>
                     </tr>
                 {% endfor %}
@@ -78,6 +98,20 @@ s:
                 <time id="widget-join-date-relative" datetime="{{ s.date }}" data-render="relative-long">{{ s.date }}</time>
                 <time id="widget-join-date-absolute" datetime="{{ s.date }}" data-render="datetime">{{ s.date }}</time>
             </div>
+            <p>
+                {{ s[lang].widget.join.content2 | safe }}
+            </p>
+            {% if s.join %}
+                <hr class="float-bottom"/>
+                <p id="widget-join-cta" class="cta">
+                    <span>
+                        {{ s[lang].widget.join.cta }}
+                    </span>
+                    {% for service_name, service_url in s.join %}
+                        <a href="{{ service_url }}"><button>{{ service_name }}</button></a>
+                    {% endfor %}
+                </p>
+            {% endif %}
         </section>
     {% endif %}
 </div>

@@ -6,6 +6,7 @@
         "date": "2023-05-04T21:00+0200",
         "published": true,
         "finished": true,
+        "cancelled": true,
         "placements": [],
         "play": {
             "Steam": "https://store.steampowered.com/app/252950/Rocket_League/",
@@ -49,6 +50,9 @@
             "core": {
                 "about": {
                     "description": "<p><dfn>Rocket League</dfn>. Immagino abbiate sentito tutti parlare del gioco in cui automobili giocano a calcio con una palla gigante…</p><p>Ha una modalità a mio parere molto sottovalutata: <i>Rissa</i>!</p><p>Fornisce periodicamente ai giocatori un potenziamento casuale tra gli undici disponibili, e gli permette di decidere quando usarlo.</p><p>In passato, l'ho giocata un sacco assieme ad un amico; ora voglio vedere come ve la cavate voi in un <b>torneo 2v2</b>: siete pronti?!"
+                },
+                "cancelled": {
+                    "description": "Il giorno del torneo non si sono presentati sufficienti partecipanti perchè il torneo potesse svolgersi."
                 }
             }
         },
@@ -60,6 +64,9 @@
             "core": {
                 "about": {
                     "description": "<p><dfn>Rocket League</dfn>. You should've heard of the game where cars play soccer with a giant metal ball…</p><p>I feel that one of its game modes is very underrated: <i>Rumble</i>!</p><p>It gives players a random power-up among a pool of 11, and allows them to decide when to use it.</p><p>In the past, me and a friend played it a lot; now, I want to see how well you all can play it in a <b>2v2 tournament</b>: are you ready?!"
+                },
+                "cancelled": {
+                    "description": "Not enough partecipants showed up on the day of the tournament for the competition to have place."
                 }
             }
         }
@@ -71,6 +78,7 @@
         "date": "2023-04-20T21:00+0200",
         "published": true,
         "finished": true,
+        "cancelled": false,
         "placements": [
             {
                 "rank": 1,
@@ -138,6 +146,7 @@
         "date": "2023-04-06T21:00+0200",
         "published": true,
         "finished": true,
+        "cancelled": false,
         "placements": [
             {
                 "rank": 1,
