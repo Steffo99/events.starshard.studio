@@ -1,0 +1,69 @@
+state = "ENDED"
+icon = "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/layer-group.png"
+languages = ["it"]
+
+################################################################################
+
+[title.main]
+it = "NERTS or Nothing!"
+
+[title.post]
+it = "Un torneo di solitario competitivo?!"
+
+[core.about.description]
+it = "<p><dfn><a href=\"https://en.wikipedia.org/wiki/Nerts\">NERTS</a></dfn> è un gioco di carte che adatta le regole del classico <a href=\"https://it.wikipedia.org/wiki/Klondike_(solitario)\">solitario Klondike</a> a gruppi di fino a 6 giocatori.</p><p>Completa il tuo solitario mentre tieni d'occhio il progresso degli altri per aiutarli o ostacolarli, segnando punti che ti permetteranno di vincere la partita!</p>"
+
+[[screenshot]]
+src = "https://steamuserimages-a.akamaihd.net/ugc/2059874233254322702/1FA4D90E9C44475B29BBB1C37274C63D3B256AE8/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
+it = "Le regole."
+
+[[screenshot]]
+src = "https://steamuserimages-a.akamaihd.net/ugc/1690526646633093224/350EF79FA1B6C1A77827BC7365AF78EF01564F7B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
+it = "Uno screenshot del gioco."
+
+################################################################################
+
+[play]
+"Steam" = "https://store.steampowered.com/app/1131190/"
+
+[join]
+"Matrix" = "https://matrix.to/#/#sss-nerts-or-nothing:ryg.one"
+"Telegram" = "https://t.me/+Pi2ABCl9Pak5YjEy"
+
+################################################################################
+
+[date]
+start = 2023-04-06T21:00:00+02:00
+end = 2023-04-06T22:30:00+02:00
+
+################################################################################
+
+[[player]]
+place = 1
+name = "xZefyr"
+score = "?"
+reward = 50
+
+[[player]]
+place = 2
+name = "Viktya"
+score = "?"
+reward = 40
+
+[[player]]
+place = 3
+name = "Eldavo"
+score = "?"
+reward = 30
+
+[[player]]
+place = 4
+name = "Gattopandacorno"
+score = "?"
+reward = 20
+
+[[player]]
+place = 5
+name = "Steffo"
+score = "?"
+reward = 10
