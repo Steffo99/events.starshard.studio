@@ -10,6 +10,11 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./_media");
     // eleventyConfig.addPassthroughCopy("./_data");
 
+    eleventyConfig.setNunjucksEnvironmentOptions({
+        trimBlocks: true,
+        lstripBlocks: true,
+    })
+
     // https://dev.to/jorik/country-code-to-flag-emoji-a21
 	eleventyConfig.addFilter("emojiFlag", function(value) {
         return String.fromCodePoint(...
