@@ -1,7 +1,10 @@
+const toml = require("toml");
 const pluginRss = require("@11ty/eleventy-plugin-rss")
 
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.addDataExtension("toml", contents => toml.parse(contents));
+
 	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist");
 	eleventyConfig.addPassthroughCopy("./_tweaks");
     eleventyConfig.addPassthroughCopy("./_media");
