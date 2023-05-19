@@ -1,4 +1,5 @@
-state = "ENDED"
+id = "momento-tetro"
+state = "FINISHED"
 icon = "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/cubes-stacked.png"
 languages = ["it", "en"]
 

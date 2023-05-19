@@ -16,19 +16,19 @@
             {{ obj.widget.joinable.content1[lang] | safe }}
         </p>
         <div id="widget-joinable-date" class="panel date">
-            <time id="widget-joinable-date-relative" datetime="{{ s.date.start }}" data-render="relative-long">{{ s.date.start }}</time>
-            <time id="widget-joinable-date-absolute" datetime="{{ s.date.start }}" data-render="datetime">{{ s.date.start }}</time>
+            <time id="widget-joinable-date-relative" datetime="{{ obj.date.start }}" data-render="relative-long">{{ obj.date.start }}</time>
+            <time id="widget-joinable-date-absolute" datetime="{{ obj.date.start }}" data-render="datetime">{{ obj.date.start }}</time>
         </div>
         <p id="widget-joinable-content2">
             {{ obj.widget.joinable.content2[lang] | safe }}
         </p>
-        {% if s.join %}
+        {% if obj.join %}
             <hr class="float-bottom"/>
             <p id="widget-joinable-cta" class="cta">
                 <span id="widget-joinable-cta-text">
                     {{ obj.widget.joinable.cta[lang] }}
                 </span>
-                {% for service_name, service_url in s.join %}
+                {% for service_name, service_url in obj.join %}
                     <a href="{{ service_url }}"><button>{{ service_name }}</button></a>
                 {% endfor %}
             </p>

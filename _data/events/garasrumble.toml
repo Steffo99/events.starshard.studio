@@ -1,3 +1,4 @@
+id = "garasrumble"
 state = "CANCELLED"
 icon = "https://raw.githubusercontent.com/starshardstudio/emblems/main/custom/garasrumble.png"
 languages = ["it", "en"]

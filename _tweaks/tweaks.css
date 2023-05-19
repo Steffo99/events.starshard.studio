@@ -178,7 +178,7 @@ img.panel {
     font-size: small;
 }
 
-#widget {
+#widget-container {
     margin-top: auto;
     margin-bottom: auto;
 }

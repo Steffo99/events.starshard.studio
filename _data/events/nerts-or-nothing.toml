@@ -1,4 +1,5 @@
-state = "ENDED"
+id = "nerts-or-nothing"
+state = "FINISHED"
 icon = "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/layer-group.png"
 languages = ["it"]
 

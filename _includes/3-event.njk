@@ -20,6 +20,62 @@ en = "Play now: "
 [obj.screenshots.title]
 it = "Screenshot"
 en = "Screenshots"
+
+[obj.widget.draft.title]
+it = "Bozza"
+en = "Draft"
+
+[obj.widget.draft.description]
+it = "Questo evento è ancora una bozza."
+en = "This event is still a draft."
+
+[obj.widget.joinable.title]
+it = "Quando inizia l'evento?"
+en = "When does the event start?"
+
+[obj.widget.joinable.content1]
+it = "L'evento avrà inizio:"
+en = "The event will begin:"
+
+[obj.widget.joinable.content2]
+it = "Iscriviti prima di allora!"
+en = "Sign up before then!"
+
+[obj.widget.joinable.cta]
+it = "Iscriviti ora: "
+en = "Sign up now: "
+
+[obj.widget.placements.title]
+it = "Piazzamenti"
+en = "Placements"
+
+[obj.widget.placements.description]
+it = "L'evento è terminato con i seguenti risultati:"
+en = "The event concluded with the following results:"
+
+[obj.widget.placements.rank]
+it = "Posizione"
+en = "Rank"
+
+[obj.widget.placements.name]
+it = "Nome"
+en = "Name"
+
+[obj.widget.placements.score]
+it = "Punteggio"
+en = "Score"
+
+[obj.widget.placements.reward]
+it = "Ricompensa"
+en = "Reward"
+
+[obj.widget.cancelled.title]
+it = "Evento annullato"
+en = "Event cancelled"
+
+[obj.widget.cancelled.description]
+it = "L'evento è stato annullato e non sarà svolto."
+en = "The event was cancelled and will not take place."
 ---
 
 <div id="core" class="chapter-2">
@@ -37,7 +93,7 @@ en = "Screenshots"
                 <span>
                     {{ obj.core.about.cta[lang] | safe }}
                 </span>
-                {% for platform_name, platform_url in s.play %}
+                {% for platform_name, platform_url in obj.play %}
                     <a href="{{ platform_url }}"><button>{{ platform_name }}</button></a>
                 {% endfor %}
             </p>

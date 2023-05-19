@@ -1,9 +1,11 @@
 ---toml
 layout = "3-event"
-permalink = "{{ lang }}/events/{{ pagination.items[0] }}/"
+permalink = "{{ lang }}/events/{{ obj.id }}/"
 
 [pagination]
 data = "events"
 size = 1
+resolve = "values"
+alias = "obj"
 ---
 
