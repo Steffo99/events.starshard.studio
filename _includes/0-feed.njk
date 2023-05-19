@@ -1,15 +1,13 @@
----
-namespace: "https://events.starshard.studio"
+---toml
+namespace = "https://events.starshard.studio"
 
-s:
-    en:
-        title:
-            main: "Star Shard Events"
-            post: "The future events!"
-    it:
-        title:
-            main: "Star Shard Events"
-            post: "Gli eventi futuri!"
+[obj.title.main]
+it = "Star Shard Events"
+en = "Star Shard Events"
+
+[obj.title.post]
+it = "Gli eventi futuri!"
+en = "The future events!"
 ---
 <?xml version="1.0" encoding="utf-8"?>
 
@@ -29,16 +27,17 @@ s:
     <link rel="alternate" href="/{{ lang }}/"/>
     <link rel="self" href="/{{ lang }}/events/atom.xml"/>
 
-    <updated>{{ events | mapattr("updated") | sort(reverse=true) | first | stringToDate | dateToRfc3339 }}</updated>
+    {# TODO: <updated>{{ events | mapattr("updated") | sort(reverse=true) | first | stringToDate | dateToRfc3339 }}</updated> #}
 
-    {% for event in events | sort(reverse=true, attr="updated") %}
-        {% if event.published and event[lang] %}
+    {% for id, event in events %}
+        {% if event.state != "DRAFT" and lang in event.languages %}
             <entry>
-                <id>{{ namespace }}/{{ lang }}/events/{{ event.id }}</id>
+                <id>{{ namespace }}/{{ lang }}/events/{{ id }}</id>
                 <title>{{ event[lang].title.main }}</title>
-                <link href="/{{ lang }}/events/{{ event.id }}/"/>
+                <link href="/{{ lang }}/events/{{ id }}/"/>
                 <summary>{{ event[lang].title.post }}</summary>
-                <updated>{{ event.updated | stringToDate | dateToRfc3339 }}</updated>
+                <updated>{{ event.date.update | dateToRfc3339 }}</updated>
+                {# <updated>{{ event.date.update | stringToDate | dateToRfc3339 }}</updated> #}
             </entry>
         {% endif %}
     {% endfor %}

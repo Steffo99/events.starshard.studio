@@ -1,0 +1,8 @@
+<img
+    id="background"
+    alt=""
+    {% if obj.background.srcset %}srcset="{{ obj.background.srcset }}"{% endif %}
+    {% if obj.background.sizes %}sizes="{{ obj.background.sizes }}"{% endif %}
+    src="{{ obj.background.src }}"
+    class="layout-center-background"
+>

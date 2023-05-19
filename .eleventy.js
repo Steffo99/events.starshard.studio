@@ -3,17 +3,24 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.setNunjucksEnvironmentOptions({
+        trimBlocks: true,
+        lstripBlocks: true,
+    })
+
     eleventyConfig.addDataExtension("toml", contents => toml.parse(contents));
+    eleventyConfig.setFrontMatterParsingOptions({
+        engines: {
+            toml: {
+                parse: toml.parse.bind(toml)
+            }
+        }
+    })
 
 	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist");
 	eleventyConfig.addPassthroughCopy("./_tweaks");
     eleventyConfig.addPassthroughCopy("./_media");
     // eleventyConfig.addPassthroughCopy("./_data");
-
-    eleventyConfig.setNunjucksEnvironmentOptions({
-        trimBlocks: true,
-        lstripBlocks: true,
-    })
 
     // https://dev.to/jorik/country-code-to-flag-emoji-a21
 	eleventyConfig.addFilter("emojiFlag", function(value) {

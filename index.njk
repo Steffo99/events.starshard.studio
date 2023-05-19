@@ -1,14 +1,19 @@
----
-layout: default
-lang: en
+---toml
+layout = "2-default"
+lang = "en"
 
-s:
-    icon: "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/language.png"
-    en:
-        title:
-            pre: "Did you know that"
-            main: "Star Shard Events"
-            post: "is available in multiple languages?"
+[obj]
+icon = "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/language.png"
+
+[obj.title.pre]
+en = "Did you know that"
+
+[obj.title.main]
+en = "Star Shard Events"
+
+[obj.title.post]
+en = "is available in multiple languages?"
+
 ---
 
 <div class="chapter-1">

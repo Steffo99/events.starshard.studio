@@ -38,18 +38,19 @@ en = "60 players battle in a Quick Play match."
 ################################################################################
 
 [date]
+update = 2023-05-19T03:26:00+02:00
 start = 2023-04-20T21:00:00+02:00
 end = 2023-04-20T21:30:00+02:00
 
 ################################################################################
 
-[[player]]
+[[placement]]
 place = 1
 name = "Steffo"
 score = "-"
 reward = 100
 
-[[player]]
+[[placement]]
 place = 2
 name = "Nemesis"
 score = "14m 57s"

@@ -1,8 +1,8 @@
----
-layout: event
-pagination:
-    data: events
-    size: 1
-    alias: s
-permalink: "{{ lang }}/events/{{ s.id }}/"
+---toml
+layout = "3-event"
+permalink = "{{ lang }}/events/{{ pagination.items[0] }}/"
+
+[pagination]
+data = "events"
+size = 1
 ---

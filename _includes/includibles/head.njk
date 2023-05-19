@@ -1,15 +1,3 @@
----
-obj:
-    bluelib:
-        rulesets:
-            - "base"
-            - "classic"
-            - "glass"
-            - "layouts-center"
-            - "colors-purplestar"
-            - "fonts-fira-ghpages"
----
-
 {# Metadata #}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -18,7 +6,7 @@ obj:
 <meta name="description" content="{{ obj.title.post[lang] }}" />
 
 {# Stylesheets #}
-{% for ruleset in obj.bluelib.rulesets %}
+{% for ruleset in obj.bluelib.ruleset %}
     <link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/{{ ruleset }}.root.css" type="text/css">
 {% endfor %}
 <link rel="stylesheet" href="/_tweaks/tweaks.css" type="text/css">

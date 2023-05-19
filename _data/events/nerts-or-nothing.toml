@@ -33,36 +33,37 @@ it = "Uno screenshot del gioco."
 ################################################################################
 
 [date]
+update = 2023-05-19T03:26:00+02:00
 start = 2023-04-06T21:00:00+02:00
 end = 2023-04-06T22:30:00+02:00
 
 ################################################################################
 
-[[player]]
+[[placement]]
 place = 1
 name = "xZefyr"
 score = "?"
 reward = 50
 
-[[player]]
+[[placement]]
 place = 2
 name = "Viktya"
 score = "?"
 reward = 40
 
-[[player]]
+[[placement]]
 place = 3
 name = "Eldavo"
 score = "?"
 reward = 30
 
-[[player]]
+[[placement]]
 place = 4
 name = "Gattopandacorno"
 score = "?"
 reward = 20
 
-[[player]]
+[[placement]]
 place = 5
 name = "Steffo"
 score = "?"
