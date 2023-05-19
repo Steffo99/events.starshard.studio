@@ -1,0 +1,63 @@
+id = ""
+state = ""
+icon = ""
+languages = []
+
+################################################################################
+
+[title.main]
+it = ""
+en = ""
+
+[title.post]
+it = ""
+en = ""
+
+[core.about.description]
+it = ""
+en = ""
+
+[[screenshot]]
+src = ""
+it = ""
+en = ""
+
+[[screenshot]]
+src = ""
+it = ""
+en = ""
+
+################################################################################
+
+[play]
+"Steam" = "https://store.steampowered.com/app/APPID/"
+
+[join]
+"Matrix" = "https://matrix.to/#/#ryg:ryg.one"
+
+################################################################################
+
+[date]
+update = 2000-01-01T00:00:00+02:00
+start = 2000-01-01T00:00:00+02:00
+end = 2000-01-01T00:00:00+02:00
+
+################################################################################
+
+[[player]]
+place = 1
+name = ""
+score = ""
+reward = 0
+
+[[player]]
+place = 2
+name = ""
+score = ""
+reward = 0
+
+[[player]]
+place = 3
+name = ""
+score = ""
+reward = 0

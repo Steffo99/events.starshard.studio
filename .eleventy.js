@@ -1,7 +1,22 @@
+const toml = require("toml");
 const pluginRss = require("@11ty/eleventy-plugin-rss")
 
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.setNunjucksEnvironmentOptions({
+        trimBlocks: true,
+        lstripBlocks: true,
+    })
+
+    eleventyConfig.addDataExtension("toml", contents => toml.parse(contents));
+    eleventyConfig.setFrontMatterParsingOptions({
+        engines: {
+            toml: {
+                parse: toml.parse.bind(toml)
+            }
+        }
+    })
+
 	eleventyConfig.addPassthroughCopy("./node_modules/@steffo/bluelib/dist");
 	eleventyConfig.addPassthroughCopy("./_tweaks");
     eleventyConfig.addPassthroughCopy("./_media");

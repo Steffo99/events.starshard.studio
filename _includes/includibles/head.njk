@@ -1,14 +1,15 @@
 {# Metadata #}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="icon" href="{{ s.icon }}"/>
-<title>{{ s[lang].title.main }}</title>
-<meta name="description" content="{{ s[lang].description }}" />
+<link rel="icon" href="{{ obj.icon }}"/>
+<title>{{ obj.title.main[lang] }}</title>
+<meta name="description" content="{{ obj.title.post[lang] }}" />
 
 {# Stylesheets #}
-{% for ruleset in bluelib.rulesets %}
+{% for ruleset in obj.bluelib.ruleset %}
     <link rel="stylesheet" href="/node_modules/@steffo/bluelib/dist/{{ ruleset }}.root.css" type="text/css">
 {% endfor %}
 <link rel="stylesheet" href="/_tweaks/tweaks.css" type="text/css">
 
+{# Tweaks #}
 <script src="/_tweaks/renderDate.js"></script>

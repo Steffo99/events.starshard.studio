@@ -1,0 +1,88 @@
+{% if obj.state === "DRAFT" %}
+    <section id="widget" class="panel box width-max1 todo widget-draft">
+        <h3 id="widget-draft-title">
+            {{ obj.widget.draft.title[lang] }}
+        </h3>
+        <p id="widget-draft-description">
+            {{ obj.widget.draft.description[lang] }}
+        </p>
+    </section>
+{% elif obj.state === "JOINABLE" %}
+    <section id="widget-joinable" class="panel box width-max1">
+        <h3 id="widget-joinable-title">
+            {{ obj.widget.joinable.title[lang] | safe }}
+        </h3>
+        <p id="widget-joinable-content1">
+            {{ obj.widget.joinable.content1[lang] | safe }}
+        </p>
+        <div id="widget-joinable-date" class="panel date">
+            <time id="widget-joinable-date-relative" datetime="{{ obj.date.start }}" data-render="relative-long">{{ obj.date.start }}</time>
+            <time id="widget-joinable-date-absolute" datetime="{{ obj.date.start }}" data-render="datetime">{{ obj.date.start }}</time>
+        </div>
+        <p id="widget-joinable-content2">
+            {{ obj.widget.joinable.content2[lang] | safe }}
+        </p>
+        {% if obj.join %}
+            <hr class="float-bottom"/>
+            <p id="widget-joinable-cta" class="cta">
+                <span id="widget-joinable-cta-text">
+                    {{ obj.widget.joinable.cta[lang] }}
+                </span>
+                {% for service_name, service_url in obj.join %}
+                    <a href="{{ service_url }}"><button>{{ service_name }}</button></a>
+                {% endfor %}
+            </p>
+        {% endif %}
+    </section>
+{% elif obj.state === "FINISHED" %}
+    <table id="widget-placements" class="panel box width-max1">
+        <caption class="table-caption-top">
+            <h3 id="widget-placements-title">
+                {{ obj.widget.placements.title[lang] | safe }}
+            </h3>
+            <p id="widget-placements-description">
+                {{ obj.widget.placements.description[lang] | safe }}
+            </p>
+        </caption>
+        <thead>
+            <tr>
+                <th>{{ obj.widget.placements.place[lang] }}</th>
+                <th>{{ obj.widget.placements.name[lang] }}</th>
+                <th>{{ obj.widget.placements.score[lang] }}</th>
+                <th>{{ obj.widget.placements.reward[lang] }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for placement in obj.placement %}
+                <tr class="place-{{ placement.place }}">
+                    <td class="placement-place">
+                        {{ placement.place }}
+                    </td>
+                    <th scope="row" class="placement-name">
+                        {{ placement.name }}
+                    </th>
+                    <td class="placement-score">
+                        {{ placement.score }}
+                    </td>
+                    <td class="placement-reward" title="{{ obj.event.valueHint }}">
+                        <span class="placement-reward-symbol">
+                            ¤
+                        </span>
+                        <span class="placement-reward-number">
+                            {{ placement.reward }}
+                        </span>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% elif obj.state === "CANCELLED" %}
+    <section id="widget" class="panel box width-max1 red widget-cancelled">
+        <h3 id="widget-cancelled-title">
+            {{ obj.widget.cancelled.title[lang] | safe }}
+        </h3>
+        <p id="widget-cancelled-description">
+            {{ obj.widget.cancelled.description[lang] | safe }}
+        </p>
+    </section>
+{% endif %}
