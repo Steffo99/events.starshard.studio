@@ -1,26 +1,24 @@
 {% if obj.title.pre[lang] or obj.title.main[lang] or obj.title.post[lang] %}
     <header>
-        <hgroup id="title">
-            {% if obj.title.pre[lang] %}
-                <div id="title-pre">
-                    {{ obj.title.pre[lang] | safe }}
-                </div>
-            {% endif %}
-            {% if obj.title.main[lang] %}
-                <h1 id="title-main">
-                    {% if s.icon %}
-                        <img id="title-main-icon" alt="" src="{{ obj.icon }}" class="icon">
-                    {% endif %}
-                    <span id="title-main-text">
-                        {{ obj.title.main[lang] }}
-                    </span>
-                </h1>
-            {% endif %}
-            {% if obj.title.post[lang] %}
-                <div id="title-post">
-                    {{ obj.title.post[lang] | safe }}
-                </div>
-            {% endif %}
-        </hgroup>
+        {% if obj.title.pre[lang] %}
+            <div id="title-pre">
+                {{ obj.title.pre[lang] | safe }}
+            </div>
+        {% endif %}
+        {% if obj.title.main[lang] %}
+            <h1 id="title-main">
+                {% if obj.icon %}
+                <img id="title-main-icon" alt="" src="{{ obj.icon }}" class="icon">
+                {% endif %}
+                <span id="title-main-text">
+                    {{ obj.title.main[lang] }}
+                </span>
+            </h1>
+        {% endif %}
+        {% if obj.title.post[lang] %}
+            <div id="title-post">
+                {{ obj.title.post[lang] | safe }}
+            </div>
+        {% endif %}
     </header>
 {% endif %}

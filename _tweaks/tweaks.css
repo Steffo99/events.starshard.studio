@@ -110,6 +110,10 @@ img.panel {
     font-size: small;
 }
 
+#title-pre, #title-post {
+    font-size: small;
+}
+
 #data-events-list {
     margin-left: 0;
     list-style-type: none;

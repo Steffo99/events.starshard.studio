@@ -1,0 +1,73 @@
+id = "la-rivinkita"
+state = "DRAFT"
+icon = "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/arrows-turn-right.png"
+languages = ["it"]
+
+[bluelib]
+ruleset = [
+    "base",
+    "classic",
+    "layouts-center",
+    "colors-pixeldawn",
+    "fonts-fira-ghpages"
+]
+
+[bluelib.background]
+src = "https://bluelib.steffo.eu/examples/pixeldawn-viktya.png"
+srcset = ""
+sizes = ""
+
+################################################################################
+
+[title.pre]
+it = "<a href=\"/it/\">Star Shard Events</a> e <a href=\"https://www.ryg.one\">RYG</a> presentano"
+
+[title.main]
+it = "'A Rivinkita"
+
+[title.post]
+it = "Il derby di Dota che tutti stavano aspettando"
+
+[core.about.description]
+it = """ \
+<p>Le due grandi squadre rivali della RYG, l'<a href="https://stratz.com/teams/8718182">Alazio</a> e i <a href="https://stratz.com/teams/8223567">DaVinki</a>, si scontreranno ancora una volta su <i><a href="https://www.dota2.com/home">Dota 2</a></i> in una serie commentata <b>alla meglio di 3</b>!</p> \
+\
+<div class="chapter-2"> \
+<div class="panel"> \
+<h4>Alazio</h4> \
+<ul>
+<li>Gimbaro</li>
+<li>Viktya</li>
+<li>Kappa</li>
+<li>Mallllco</li>
+<li>Spaggia</li>
+</ul>
+</div> \
+<div class="panel"> \
+<h4>DaVinki</h4> \
+<ul>
+<li>Fritz</li>
+<li>Alleander</li>
+<li class="fade">?</li>
+<li class="fade">?</li>
+<li class="fade">?</li>
+</ul>
+</div> \
+</div> \
+ \
+<p>Chi vincerà?</p> \
+"""
+
+################################################################################
+
+[play]
+"Steam" = "https://store.steampowered.com/app/570/Dota_2/"
+
+################################################################################
+
+[date]
+update = 2000-01-01T00:00:00+02:00
+start = 2023-05-25T21:00:00+02:00
+end = 2000-05-25T23:30:00+02:00
+
+################################################################################
