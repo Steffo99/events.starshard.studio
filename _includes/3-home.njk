@@ -16,10 +16,6 @@ en = "Star Shard Events"
 it = "Divertiti!"
 en = "Have fun!"
 
-[obj.about.title]
-it = "A proposito"
-en = "About"
-
 [obj.about.about.title]
 it = "Dove sono?"
 en = "Where am I?"
@@ -27,10 +23,6 @@ en = "Where am I?"
 [obj.about.about.content]
 it = "Questo è il sito web dove vengono pubblicati, annunciati, e archiviati gli eventi organizzati da <i>Star Shard Studio</i>."
 en = "This is the website where events organized by <i>Star Shard Studio</i> are published, announced, and archived."
-
-[obj.data.title]
-it = "Cosa stiamo facendo"
-en = "What we're doing"
 
 [obj.data.events.title]
 it = "Eventi"
@@ -104,9 +96,9 @@ en = "First place reward"
                             {{ event.title.post[lang] | safe }}
                         </div>
                         {#
-                        {% set count = event.player | selectattr("name") | length %}
-                        {% set leading = event.player[0] %}
-                        {% set prizepool = event.player | selectattr("reward") | sum %}
+                        {% set count = event.placement | selectattr("name") | length %}
+                        {% set leading = event.placement[0] %}
+                        {% set prizepool = event.placement | selectattr("reward") | sum %}
                         #}
                         <div class="event-placements">
                             {% if count > 0 %}

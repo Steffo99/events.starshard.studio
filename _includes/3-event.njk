@@ -5,21 +5,9 @@ layout = "2-default"
 it = "<a href=\"/it/\">Star Shard Events</a> presenta"
 en = "<a href=\"/en/\">Star Shard Events</a> presents"
 
-[obj.core.title]
-it = "Cose da sapere"
-en = "Things to know"
-
 [obj.core.about.title]
 it = "Di cosa si tratta?"
 en = "What is this about?"
-
-[obj.core.about.cta]
-it = "Gioca ora: "
-en = "Play now: "
-
-[obj.screenshots.title]
-it = "Screenshot"
-en = "Screenshots"
 
 [obj.widget.draft.title]
 it = "Bozza"
@@ -40,10 +28,6 @@ en = "The event will begin:"
 [obj.widget.joinable.content2]
 it = "Non dimenticarti!"
 en = "Don't forget!"
-
-[obj.widget.joinable.cta]
-it = "Iscriviti ora: "
-en = "Sign up now: "
 
 [obj.widget.placements.title]
 it = "Piazzamenti"
@@ -79,34 +63,17 @@ en = "The event was cancelled and will not take place."
 ---
 
 <div id="core" class="chapter-2">
-    <h2 id="core-title">
-        {{ obj.core.title[lang] | safe }}
-    </h2>
+    {% include "includibles/event-widget.njk" %}
     <section id="core-about" class="panel box width-max1">
         <h3>
             {{ obj.core.about.title[lang] | safe }}
         </h3>
         {{ obj.core.about.description[lang] | safe }}
-        {% if obj.play %}
-            <hr class="float-bottom"/>
-            <p id="core-about-cta" class="cta">
-                <span>
-                    {{ obj.core.about.cta[lang] | safe }}
-                </span>
-                {% for platform_name, platform_url in obj.play %}
-                    <a href="{{ platform_url }}"><button>{{ platform_name }}</button></a>
-                {% endfor %}
-            </p>
-        {% endif %}
     </section>
-    {% include "includibles/event-widget.njk" %}
 </div>
 
 {% if obj.screenshot %}
     <div id="screenshots" class="chapter-3">
-        <h2>
-            {{ obj.screenshots.title[lang] | safe }}
-        </h2>
         {% for screenshot in obj.screenshot %}
             <img class="panel box width-max1" alt="{{ screenshot[lang] }}" title="{{ screenshot[lang] }}" src="{{ screenshot.src }}">
         {% endfor %}

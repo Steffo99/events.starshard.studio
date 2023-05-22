@@ -22,17 +22,8 @@
         <p id="widget-joinable-content2">
             {{ obj.widget.joinable.content2[lang] | safe }}
         </p>
-        {% if obj.join %}
-            <hr class="float-bottom"/>
-            <p id="widget-joinable-cta" class="cta">
-                <span id="widget-joinable-cta-text">
-                    {{ obj.widget.joinable.cta[lang] }}
-                </span>
-                {% for service_name, service_url in obj.join %}
-                    <a href="{{ service_url }}"><button>{{ service_name }}</button></a>
-                {% endfor %}
-            </p>
-        {% endif %}
+        <hr class="float-bottom"/>
+        {% include "includibles/actions.njk" %}
     </section>
 {% elif obj.state === "FINISHED" %}
     <table id="widget-placements" class="panel box width-max1">

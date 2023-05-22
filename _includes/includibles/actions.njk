@@ -1,0 +1,5 @@
+<div id="nav-actions" class="actions">
+    {% for action in obj.action %}
+        <a href="{{ action.url }}"><button>{{ action[lang] }}</button></a>
+    {% endfor %}
+</div>

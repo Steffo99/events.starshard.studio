@@ -55,8 +55,13 @@ Commentatori \
 
 ################################################################################
 
-[play]
-"Steam" = "https://store.steampowered.com/app/570/Dota_2/"
+[[action]]
+it = "Diventa un caster"
+url = "https://t.me/@Steffo"
+
+[[action]]
+it = "Iscriviti come riserva"
+url = "https://t.me/@Steffo"
 
 ################################################################################
 

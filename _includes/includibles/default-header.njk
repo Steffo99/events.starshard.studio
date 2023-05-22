@@ -1,5 +1,8 @@
 {% if obj.title.pre[lang] or obj.title.main[lang] or obj.title.post[lang] %}
-    <header id="navbar" class="panel box">
+    <header>
+
+    </header>
+    <nav id="navbar" class="panel box">
         {% if obj.icon %}
             <img id="title-icon" alt="" src="{{ obj.icon }}" class="icon">
         {% endif %}
@@ -13,5 +16,6 @@
                 {{ obj.title.post[lang] | safe }}
             </h2>
         {% endif %}
-    </header>
+        {% include "includibles/actions.njk" %}
+    </nav>
 {% endif %}
