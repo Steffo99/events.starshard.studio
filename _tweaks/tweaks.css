@@ -226,3 +226,16 @@ img.panel {
     --bhsl-current-saturation: var(--bhsl-foreground-saturation);
     --bhsl-current-lightness: var(--bhsl-foreground-lightness);
 }
+
+
+@media screen and (max-width: 492px) {
+    #navbar {
+        flex-direction: column;
+        position: static;
+    }
+
+    #navbar #title-icon {
+        width: 64px;
+        height: 64px;
+    }
+}
