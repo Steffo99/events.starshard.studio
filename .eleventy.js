@@ -63,5 +63,9 @@ module.exports = function(eleventyConfig) {
         })
         return values
     })
+    eleventyConfig.addFilter("getLatestEventUpdate", function(value) {
+        let values = Object.values(value).map(v => v.date.update)
+        return Math.max(...values)
+    })
     eleventyConfig.addPlugin(pluginRss);
 };

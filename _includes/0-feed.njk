@@ -27,7 +27,7 @@ en = "The future events!"
     <link rel="alternate" href="/{{ lang }}/"/>
     <link rel="self" href="/{{ lang }}/events/atom.xml"/>
 
-    <updated>{{ events | mapattr("date") | mapattr("start") | sort(reverse=true) | first | stringToDate | dateToRfc3339 }}</updated>
+    <updated>{{ events | getLatestEventUpdate | stringToDate | dateToRfc3339 }}</updated>
 
     {% for event in events | sortEvents %}
         {% if event.state != "DRAFT" and lang in event.languages %}
