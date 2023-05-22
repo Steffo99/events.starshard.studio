@@ -42,5 +42,26 @@ module.exports = function(eleventyConfig) {
         }
         return n
     })
+    eleventyConfig.addFilter("sortEvents", function(value) {
+        let values = Object.values(value)
+        values.sort(function(a, b) {
+            if(a.date.start < b.date.start) {
+                return 1
+            }
+            else if(a.date.start > b.date.start) {
+                return -1
+            }
+            else if(a.id < b.id) {
+                return 1
+            }
+            else if(a.id > b.id) {
+                return -1
+            }
+            else {
+                return 0
+            }
+        })
+        return values
+    })
     eleventyConfig.addPlugin(pluginRss);
 };

@@ -27,14 +27,14 @@ en = "The future events!"
     <link rel="alternate" href="/{{ lang }}/"/>
     <link rel="self" href="/{{ lang }}/events/atom.xml"/>
 
-    {# TODO: <updated>{{ events | mapattr("updated") | sort(reverse=true) | first | stringToDate | dateToRfc3339 }}</updated> #}
+    <updated>{{ events | mapattr("date") | mapattr("start") | sort(reverse=true) | first | stringToDate | dateToRfc3339 }}</updated>
 
-    {% for id, event in events %}
+    {% for event in events | sortEvents %}
         {% if event.state != "DRAFT" and lang in event.languages %}
             <entry>
-                <id>{{ namespace }}/{{ lang }}/events/{{ id }}</id>
+                <id>{{ namespace }}/{{ lang }}/events/{{ event.id }}</id>
                 <title>{{ event[lang].title.main }}</title>
-                <link href="/{{ lang }}/events/{{ id }}/"/>
+                <link href="/{{ lang }}/events/{{ event.id }}/"/>
                 <summary>{{ event[lang].title.post }}</summary>
                 <updated>{{ event.date.update | dateToRfc3339 }}</updated>
                 {# <updated>{{ event.date.update | stringToDate | dateToRfc3339 }}</updated> #}

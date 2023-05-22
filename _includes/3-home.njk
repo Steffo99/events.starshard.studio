@@ -94,12 +94,12 @@ en = "First place reward"
         </p>
         <hr/>
         <ul id="data-events-list">
-            {% for id, event in events %}
+            {% for event in events | sortEvents %}
                 {% if event.state != "DRAFT" and lang in event.languages %}
                     <li id="event-{{ event.id }}" class="event {% if event.state == "FINISHED" %}fade{% endif %}">
                         <img alt="" class="event-icon icon" src="{{ event.icon }}"/>
                         <h4 class="event-title">
-                            <a href="/{{ lang }}/events/{{ id }}/">
+                            <a href="/{{ lang }}/events/{{ event.id }}/">
                                 {{ event.title.main[lang] | safe }}
                             </a>
                         </h4>
