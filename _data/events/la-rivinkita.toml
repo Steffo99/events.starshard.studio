@@ -1,21 +1,7 @@
 id = "la-rivinkita"
-state = "DRAFT"
+state = "JOINABLE"
 icon = "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/arrows-turn-right.png"
 languages = ["it"]
-
-[bluelib]
-ruleset = [
-    "base",
-    "classic",
-    "layouts-center",
-    "colors-pixeldawn",
-    "fonts-fira-ghpages"
-]
-
-[bluelib.background]
-src = "https://bluelib.steffo.eu/examples/pixeldawn-viktya.png"
-srcset = ""
-sizes = ""
 
 ################################################################################
 
@@ -48,10 +34,19 @@ it = """ \
 <ul>
 <li>Fritz</li>
 <li>Alleander</li>
-<li class="fade">?</li>
-<li class="fade">?</li>
-<li class="fade">?</li>
+<li>Life</li>
+<li>Adry</li>
+<li class="fade" title="Partecipazione TBD">Gattopardo</li>
 </ul>
+</div> \
+<div class="panel"> \
+<h4> \
+Commentatori \
+</h4> \
+<ul> \
+<li>Steffo</li> \
+<li class="fade">???</li> \
+</ul> \
 </div> \
 </div> \
  \
