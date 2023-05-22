@@ -110,10 +110,6 @@ img.panel {
     font-size: small;
 }
 
-#title-pre, #title-post {
-    font-size: small;
-}
-
 #data-events-list {
     margin-left: 0;
     list-style-type: none;
@@ -197,4 +193,36 @@ img.panel {
 
 .placement-reward-number {
     font-weight: 500;
+}
+
+#navbar {
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+    width: calc(100vw - 16px);
+}
+
+#navbar :is(h1, h2, h3, h4, h5, h6) {
+    line-height: 1em;
+}
+
+#navbar #title-icon {
+    width: 32px;
+    height: 32px;
+}
+
+#navbar #title-main {
+    font-size: 28px;
+    margin-right: 16px;
+}
+
+#navbar #title-post {
+    font-size: 14px;
+    font-weight: 400;
+    --bhsl-current-hue: var(--bhsl-foreground-hue);
+    --bhsl-current-saturation: var(--bhsl-foreground-saturation);
+    --bhsl-current-lightness: var(--bhsl-foreground-lightness);
 }
