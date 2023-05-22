@@ -198,7 +198,7 @@ img.panel {
 #navbar {
     flex-direction: row;
     align-items: center;
-    position: fixed;
+    position: sticky;
     top: 8px;
     left: 8px;
     z-index: 10;
