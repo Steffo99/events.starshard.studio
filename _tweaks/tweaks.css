@@ -1,10 +1,114 @@
 body {
     padding: 8px;
+    justify-content: start;
+    max-width: unset;
 }
 
 footer {
+    margin-top: auto;
     margin-bottom: 0;
 }
+
+.layout-row {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.layout-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#navbar {
+    align-items: center;
+}
+
+#navbar :is(h1, h2, h3, h4, h5, h6) {
+    line-height: 1em;
+}
+
+#navbar #title-main {
+    font-size: 28px;
+    margin-right: 16px;
+}
+
+#navbar #title-post {
+    font-size: 16px;
+    font-weight: 400;
+    --bhsl-current-hue: var(--bhsl-foreground-hue);
+    --bhsl-current-saturation: var(--bhsl-foreground-saturation);
+    --bhsl-current-lightness: var(--bhsl-foreground-lightness);
+}
+
+@media screen and (max-width: 800px) {
+    #home-container {
+        flex-wrap: wrap;
+    }
+
+    #home-left {
+        flex-basis: 100%;
+    }
+
+    #home-right {
+        flex-basis: 100%;
+    }
+
+    main {
+        margin-top: unset;
+    }
+
+    #navbar {
+        flex-direction: column;
+        position: static;
+    }
+
+    #navbar #title-icon {
+        width: 64px;
+        height: 64px;
+    }
+    
+    #navbar #nav-actions {
+        display: none;
+    }
+}
+@media screen and (min-width: 800px) {
+    #home-container {
+        flex-wrap: nowrap;
+    }
+
+    #home-left {
+        flex-basis: 400px;
+    }
+
+    #home-right {
+        flex-grow: 1;
+    }
+
+    main {
+        margin-top: 48px;
+    }
+
+    #navbar {
+        flex-direction: row;
+        position: fixed;
+        top: 8px;
+        left: 8px;
+        z-index: 10;
+        width: calc(100vw - 16px);
+    }
+
+    #navbar #title-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    #navbar #nav-actions {
+        margin-left: auto;
+    }
+}
+
 
 .icon {
 	display: inline-block;
@@ -109,11 +213,11 @@ img.panel {
     font-size: small;
 }
 
-#data-events-list {
+.events-list {
     margin-left: 0;
     list-style-type: none;
 }
-#data-events-list > .event {
+.event {
     display: grid;
     grid-template-areas:
         "icon title date"
@@ -126,15 +230,16 @@ img.panel {
     margin-top: 12px;
     margin-bottom: 12px;
 }
-#data-events-list > .event > .event-icon {
+.event > .event-icon-link {
     grid-area: icon;
-    justify-self: center;
-    align-self: center;
-
+    justify-self: stretch;
+    align-self: stretch;
+}
+.event > .event-icon-link > .event-icon {
     width: 48px;
     height: 48px;
 }
-#data-events-list > .event > .event-title {
+.event > .event-title {
     grid-area: title;
 
     margin: 0;
@@ -143,12 +248,12 @@ img.panel {
     font-weight: 600;
     font-size: large;
 }
-#data-events-list > .event > .event-description {
+.event > .event-description {
     grid-area: description;
 
     font-size: small;
 }
-#data-events-list > .event > .event-date {
+.event > .event-date {
     grid-area: date;
     align-self: center;
     justify-self: end;
@@ -156,7 +261,7 @@ img.panel {
     font-weight: 600;
     font-size: large;
 }
-#data-events-list > .event > .event-placements {
+.event > .event-placements {
     grid-area: placement;
     justify-self: end;
 
@@ -171,55 +276,6 @@ img.panel {
 .actions {
     font-size: 1.12em;
     font-weight: bold;
+    text-align: center;
 }
 
-#navbar {
-    align-items: center;
-}
-#navbar :is(h1, h2, h3, h4, h5, h6) {
-    line-height: 1em;
-}
-#navbar #title-main {
-    font-size: 28px;
-    margin-right: 16px;
-}
-#navbar #title-post {
-    font-size: 16px;
-    font-weight: 400;
-    --bhsl-current-hue: var(--bhsl-foreground-hue);
-    --bhsl-current-saturation: var(--bhsl-foreground-saturation);
-    --bhsl-current-lightness: var(--bhsl-foreground-lightness);
-}
-@media screen and (max-width: 984px) {
-    #navbar {
-        flex-direction: column;
-        position: static;
-    }
-    #navbar #title-icon {
-        width: 64px;
-        height: 64px;
-    }
-    #navbar #nav-actions {
-        display: none;
-    }
-}
-@media screen and (min-width: 985px) {
-    main {
-        margin-top: 48px;
-    }
-    #navbar {
-        flex-direction: row;
-        position: fixed;
-        top: 8px;
-        left: 8px;
-        z-index: 10;
-        width: calc(100vw - 16px);
-    }
-    #navbar #title-icon {
-        width: 32px;
-        height: 32px;
-    }
-    #navbar #nav-actions {
-        margin-left: auto;
-    }
-}

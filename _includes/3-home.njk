@@ -16,26 +16,40 @@ en = "Star Shard Events"
 it = "Divertiti!"
 en = "Have fun!"
 
-[obj.about.about.title]
+[obj.about.title]
 it = "Dove sono?"
 en = "Where am I?"
 
-[obj.about.about.content]
+[obj.about.content]
 it = "Questo è il sito web dove vengono pubblicati, annunciati, e archiviati gli eventi organizzati da <i>Star Shard Studio</i>."
 en = "This is the website where events organized by <i>Star Shard Studio</i> are published, announced, and archived."
 
-[obj.data.events.title]
+[obj.subscribe.title]
+it = "Seguici!"
+en = "Follow us!"
+
+[obj.subscribe.content]
+it = "Puoi iscriverti al feed degli eventi con qualsiasi client RSS!"
+en = "You can subscribe to the events feed with any RSS client!"
+
+[obj.subscribe.feed]
 it = "Eventi"
 en = "Events"
 
-[obj.data.events.content]
+[obj.subscribe.button]
+it = "Iscriviti"
+en = "Subscribe"
+
+[obj.events.title]
+it = "Eventi"
+en = "Events"
+
+[obj.events.content]
 it = """ \
 Tutti gli eventi che abbiamo organizzato, dal più recente al più vecchio. \
-Ora anche in forma di <a rel=\"feed\" type=\"application/atom+xml\" title=\"I nostri eventi\" href="events/atom.xml">feed RSS</a>! \
 """
 en = """ \
 All events we organized, from the newest to the oldest. \
-Now available as a <a rel=\"feed\" type=\"application/atom+xml\" title=\"Our events\" href="events/atom.xml">RSS feed</a>! \
 """
 
 [obj.event.descriptionHint]
@@ -59,88 +73,101 @@ it = "Premio primo posto"
 en = "First place reward"
 ---
 
-<div id="about" class="chapter-1">
-    <div id="about-about" class="panel box width-max1">
-        <h3 id="about-about-title">
-            {{ obj.about.about.title[lang] | safe }}
-        </h3>
-        <p id="about-about-content">
-            {{ obj.about.about.content[lang] | safe }}
-        </p>
+<div id="home-container" class="layout-row">
+    <div id="home-left" class="layout-column">
+        <div id="home-about" class="panel box">
+            <h3 id="home-about-title">
+                {{ obj.about.title[lang] | safe }}
+            </h3>
+            <p id="home-about-content">
+                {{ obj.about.content[lang] | safe }}
+            </p>
+        </div>
+        <div id="home-subscribe" class="panel box">
+            <h3 id="home-subscribe-title">
+                {{ obj.subscribe.title[lang] | safe }}
+            </h3>
+            <p id="home-subscribe-content">
+                {{ obj.subscribe.content[lang] | safe }}
+            </p>
+            <p id="home-subscribe-actions" class="actions">
+                <a rel="feed" type="application/atom+xml" title="{{ obj.subscribe.feed[lang] }}" href="events/atom.xml"><button>{{ obj.subscribe.button[lang] | safe }}</button></a>
+            </p>
+        </div>
     </div>
-</div>
-
-<div id="data" class="chapter-1">
-    <div id="data-events" class="panel box width-max2">
-        <h3 id="data-events-title">
-            {{ obj.data.events.title[lang] | safe }}
-        </h3>
-        <p id="data-events-content">
-            {{ obj.data.events.content[lang] | safe }}
-        </p>
-        <hr/>
-        <ul id="data-events-list">
-            {% for event in events | sortEvents %}
-                {% if event.state != "DRAFT" and lang in event.languages %}
-                    <li id="event-{{ event.id }}" class="event {% if event.state == "FINISHED" or event.state == "CANCELLED" %}fade{% endif %}">
-                        <img alt="" class="event-icon icon" src="{{ event.icon }}"/>
-                        <h4 class="event-title">
-                            <a href="/{{ lang }}/events/{{ event.id }}/">
-                                {{ event.title.main[lang] | safe }}
+    <div id="home-right" class="layout-column">
+        <div id="home-events" class="panel box">
+            <h3 id="home-events-title">
+                {{ obj.events.title[lang] | safe }}
+            </h3>
+            <p id="home-events-content">
+                {{ obj.events.content[lang] | safe }}
+            </p>
+            <ul id="home-events-list" class="events-list">
+                {% for event in events | sortEvents %}
+                    {% if event.state != "DRAFT" and lang in event.languages %}
+                        <li id="event-{{ event.id }}" class="event {% if event.state == "FINISHED" or event.state == "CANCELLED" %}fade{% endif %}">                           
+                            <a href="/{{ lang }}/events/{{ event.id }}/" class="event-icon-link" tabindex="-1" aria-hidden>
+                                <img alt="" class="event-icon icon" src="{{ event.icon }}"/>
                             </a>
-                        </h4>
-                        <div class="event-date" title="{{ obj.event.dateHint[lang] }}">
-                            <time datetime="{{ event.date.start }}" data-render="date">{{ event.date.start }}</time>
-                        </div>
-                        <div class="event-description" title="{{ obj.event.descriptionHint[lang] }}">
-                            {{ event.title.post[lang] | safe }}
-                        </div>
-                        {#
-                        {% set count = event.placement | selectattr("name") | length %}
-                        {% set leading = event.placement[0] %}
-                        {% set prizepool = event.placement | selectattr("reward") | sum %}
-                        #}
-                        <div class="event-placements">
-                            {% if count > 0 %}
-                                <span class="event-placements-count" title="{{ obj.event.countHint[lang] }}">
-                                    <span class="event-placements-count-symbol" aria-label="{{ obj.event.countHint[lang] }}">
-                                        ♙
+                            <h4 class="event-title">
+                                <a href="/{{ lang }}/events/{{ event.id }}/">
+                                    {{ event.title.main[lang] | safe }}
+                                </a>
+                            </h4>
+                            <div class="event-date" title="{{ obj.event.dateHint[lang] }}">
+                                <time datetime="{{ event.date.start }}" data-render="date">{{ event.date.start }}</time>
+                            </div>
+                            <div class="event-description" title="{{ obj.event.descriptionHint[lang] }}">
+                                {{ event.title.post[lang] | safe }}
+                            </div>
+                            {#
+                            {% set count = event.placement | selectattr("name") | length %}
+                            {% set leading = event.placement[0] %}
+                            {% set prizepool = event.placement | selectattr("reward") | sum %}
+                            #}
+                            <div class="event-placements">
+                                {% if count > 0 %}
+                                    <span class="event-placements-count" title="{{ obj.event.countHint[lang] }}">
+                                        <span class="event-placements-count-symbol" aria-label="{{ obj.event.countHint[lang] }}">
+                                            ♙
+                                        </span>
+                                        <span class="event-placements-count-number">
+                                            {{ count }}
+                                        </span>
                                     </span>
-                                    <span class="event-placements-count-number">
-                                        {{ count }}
+                                    <span class="events-placements-connector" role="separator">
+                                        ·
                                     </span>
-                                </span>
-                                <span class="events-placements-connector" role="separator">
-                                    ·
-                                </span>
-                            {% endif %}
-                            {% if leading.name %}
-                                <span class="event-placements-leading" title="{{ obj.event.leadingHint[lang] }}">
-                                    <span class="event-placements-leading-symbol" aria-label="{{ obj.event.leadingHint[lang] }}">
-                                        ♔
+                                {% endif %}
+                                {% if leading.name %}
+                                    <span class="event-placements-leading" title="{{ obj.event.leadingHint[lang] }}">
+                                        <span class="event-placements-leading-symbol" aria-label="{{ obj.event.leadingHint[lang] }}">
+                                            ♔
+                                        </span>
+                                        <span class="event-placements-leading-name">
+                                            {{ leading.name }}
+                                        </span>
                                     </span>
-                                    <span class="event-placements-leading-name">
-                                        {{ leading.name }}
+                                    <span class="events-placements-connector" role="separator">
+                                        ·
                                     </span>
-                                </span>
-                                <span class="events-placements-connector" role="separator">
-                                    ·
-                                </span>
-                            {% endif %}
-                            {% if prizepool > 0 %}
-                                <span class="event-placements-reward placement-reward" title="{{ obj.event.valueHint[lang] }}">
-                                    <span class="event-placement-reward-symbol placement-reward-symbol" aria-label="{{ obj.event.valueHint[lang] }}">
-                                        ¤
+                                {% endif %}
+                                {% if prizepool > 0 %}
+                                    <span class="event-placements-reward placement-reward" title="{{ obj.event.valueHint[lang] }}">
+                                        <span class="event-placement-reward-symbol placement-reward-symbol" aria-label="{{ obj.event.valueHint[lang] }}">
+                                            ¤
+                                        </span>
+                                        <span class="event-placement-reward-number placement-reward-number">
+                                            {{ prizepool }}
+                                        </span>
                                     </span>
-                                    <span class="event-placement-reward-number placement-reward-number">
-                                        {{ prizepool }}
-                                    </span>
-                                </span>
-                            {% endif %}
-                        </div>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
+                                {% endif %}
+                            </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </div>
