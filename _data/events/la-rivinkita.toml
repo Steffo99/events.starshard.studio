@@ -1,5 +1,5 @@
 id = "la-rivinkita"
-state = "JOINABLE"
+state = "FINISHED"
 icon = "https://raw.githubusercontent.com/starshardstudio/emblems/main/rendered/arrows-turn-right.png"
 languages = ["it"]
 
@@ -36,7 +36,7 @@ it = """ \
 <li>Alleander</li>
 <li>Life</li>
 <li>Adry</li>
-<li class="fade" title="Partecipazione TBD">Gattopardo</li>
+<li>Gattopardo</li>
 </ul>
 </div> \
 <div class="panel"> \
@@ -45,7 +45,7 @@ Commentatori \
 </h4> \
 <ul> \
 <li>Steffo</li> \
-<li class="fade">???</li> \
+<li>Sensei</li> \
 </ul> \
 </div> \
 </div> \
@@ -71,3 +71,63 @@ start = 2023-05-25T21:00:00+02:00
 end = 2023-05-25T23:30:00+02:00
 
 ################################################################################
+
+[[placement]]
+place = 1
+name = "Gimbaro"
+score = "2 wins"
+reward = 150
+
+[[placement]]
+place = 1
+name = "Mallllco"
+score = "2 wins"
+reward = 150
+
+[[placement]]
+place = 1
+name = "Spaggia"
+score = "2 wins"
+reward = 150
+
+[[placement]]
+place = 1
+name = "Viktya"
+score = "2 wins"
+reward = 150
+
+[[placement]]
+place = 1
+name = "Kappa"
+score = "2 wins"
+reward = 150
+
+[[placement]]
+place = 2
+name = "Alleander"
+score = "0 wins"
+reward = 100
+
+[[placement]]
+place = 2
+name = "Adry"
+score = "0 wins"
+reward = 100
+
+[[placement]]
+place = 2
+name = "Life"
+score = "0 wins"
+reward = 100
+
+[[placement]]
+place = 2
+name = "Gattopardo"
+score = "0 wins"
+reward = 100
+
+[[placement]]
+place = 2
+name = "xZefyr"
+score = "0 wins"
+reward = 100
